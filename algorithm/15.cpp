@@ -7,13 +7,13 @@ int main015() {
 	int top;
 
 	int sum_count = 0;
-
+	int i;
 	bool check;
 	for (top = 2; top <= num; top++)
 	{
 		check = true;
-		int i;
-		for (i = 2; i < top; i++) {
+
+		for (i = 2; i * i <= top; i++) {
 			if (top % i == 0)
 			{
 				check = false;
@@ -23,6 +23,7 @@ int main015() {
 		if (check == true)
 		{
 			sum_count++;
+			//printf("소수는 %d입니다. \n",top);
 		}
 	}
 	printf("%d", sum_count);
