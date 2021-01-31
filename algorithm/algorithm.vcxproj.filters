@@ -78,9 +78,6 @@
     <ClCompile Include="23.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="24.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="26.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -97,6 +94,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="22.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="24.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
