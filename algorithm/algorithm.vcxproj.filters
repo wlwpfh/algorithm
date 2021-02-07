@@ -126,10 +126,10 @@
     <ClCompile Include="39.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="37.cpp">
+    <ClCompile Include="40.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="40.cpp">
+    <ClCompile Include="37.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
