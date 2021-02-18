@@ -10,7 +10,8 @@ int main() {
 	vector <int> sorted(num + 1);
 	for (i = 1; i <= num; i++) {
 		scanf("%d", &arr[i]);
-	}
+	}  
+	//순서와 무엇이 더 큰지 확인하기
 	for (i = 1; i <= num; i++) {
 		tmp = arr[i];
 
