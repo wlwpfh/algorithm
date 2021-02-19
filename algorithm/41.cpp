@@ -1,40 +1,22 @@
 #include<stdio.h>
-int main() {
-
-	int num, i, j, sum = 0, final_sum = 0, count = 0; //몇 개가 있는 지 나중에 세기 위해서 
-	scanf("%d", &num);
-
-	//printf("%d",num/2);
-	int now = 0, past = 0; bool check = true; //false가 되면 바로 다음 계산으로 넘어가기 
-
-	for (i = num / 2 + 1; i > 0; i--) {
-		if (past == 0) //처음 들어온 경우 
-		{
-			past = i;
-			sum = sum + past;
-			printf("처음 들어온 수는 %d입니다. \n", i);
-		}
-		else { //처음들어온 게 아닌 경우 
-			if (!(sum >= num) && i - past == 1 && check == true) //하나만 차이가 나는 경우 
-			{
-				past = i;
-				sum = sum + past;
-				printf("다음으로 들어온 수는 %d입니다. \n", i);
+int main41() {
+	freopen("input.txt", "rt", stdin);
+	freopen("output.txt", "wt", stdout);
+	int a, b = 1, cnt = 0, tmp, i;
+	scanf("%d", &a);
+	tmp = a;
+	a--;
+	while (a > 0) {
+		b++;
+		a = a - b;
+		if (a % b == 0) {
+			for (i = 1; i < b; i++) {
+				printf("%d + ", (a / b) + i);
 			}
-			else {
-				check = false;
-			}
-
-		}
-		if (check == true && sum == num)
-		{
-			count++;
-			printf("하나의 %d가 만들어졌습니다. \n", sum);
-			sum = 0;
+			printf("%d = %d\n", (a / b) + i, tmp);
+			cnt++;
 		}
 	}
-
-	printf("\n %d", count);
-
+	printf("%d\n", cnt);
 	return 0;
 }
