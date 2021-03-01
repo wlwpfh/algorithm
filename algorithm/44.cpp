@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<vector>
 using namespace std;
-int main() {
+int main44() {
 
 	int i, n, k, num = 0;
 
