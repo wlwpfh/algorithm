@@ -1,44 +1,35 @@
 #include<stdio.h>
 #include<vector>
 using namespace std;
-int main45() {
+int main45_() {
 
 	int i, n, k, num = 0;
 
 	scanf("%d %d", &n, &k);
 
 	vector <int>arr(n + 1);
-
-	for (i = 0; i < n + 1; i++) {
-		arr[i] = i;
-	}
-
-	int start = 0;
-
-	int tmp_start = 0;
-	int tmp_n = n;
-	for (i = 0; i < n; i++) {
-		start = start + k;
-		if (tmp_n >= start)
-			;
-		else
-			start = start % tmp_n;
-
-
-		arr[start] = 0;
-
-		tmp_start = start;
-		for (tmp_start = tmp_start + 1; tmp_start < n + 1; tmp_start++) {
-			arr[tmp_start - 1] = arr[tmp_start];
+	int pos = 0; int cnt = 0, bp = 0;
+	while (1) {
+		pos++;
+		if (pos > n) pos = 1;
+		if (arr[pos] == 0) {
+			cnt++;
+			if (cnt == k) {
+				arr[pos] = 1;
+				cnt = 0;
+				bp++;
+			}
 		}
-		arr[n] = 0;
-		printf("%d \n", start);
-		tmp_n--;
+
+		if (bp == n - 1) break;
 	}
 
 	for (i = 1; i < n + 1; i++) {
-		if (arr[i] != 0)
-			printf("%d", arr[i]);
+		if (arr[i] == 0) {
+
+			printf("%d", i);
+			break;
+		}
 	}
 
 	return 0;
