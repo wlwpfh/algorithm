@@ -1,37 +1,54 @@
 #include<stdio.h>
 #include<vector>
-#include<string.h>
 using namespace std;
-int songs_sum(1000);
-int main() {
-	int song_num, dvd_num, i,  sum=0;
-	int min_sum = 1000;
-	scanf("%d %d", &song_num, &dvd_num);
 
-	vector<int> songs(song_num);
+int arr[1001], n;
 
-	for (i = 0; i < song_num; i++)
-		scanf("%d", &songs[i]);
+int count(int size) {
+	int i, count = 1, sum = 0;
 
-	
-	//이분검색 이용해서 맨 처음에 (1,2,3,4,5,6,7)(8)(9)로 했다가 점점 수를 늘리기
-
-	int start=0, middle=song_num-2, end=song_num-1; //index시작이 0부터이니까 
-
-	for (start = 0; start < middle; start++) { //index0부터 index6까지
-		sum = sum + songs[start];
+	for (i = 1; i <= n; i++) {
+		if (sum + arr[i] > size) {
+			count++;
+			sum = arr[i]; //새로운 것을 만들고 새롭게 초기화 
+		}
+		else {
+			sum = sum + arr[i];
+		}
 	}
-	int tmp = sum;
-	sum = 0;
-	for (; middle < end; middle++) {
-		sum = sum + songs[middle];
+	return count;
+}
+
+int main43_() {
+	int m, i, result = 0, max = -1000;
+	int low = 1, mid, high = 0;
+
+	scanf("%d %d", &n, &m);
+
+
+
+	for (i = 1; i <= n; i++) {
+		scanf("%d", &arr[i]);
+		high = high + arr[i];
+		if (arr[i] > max) {
+			max = arr[i];
+		}
 	}
 
-	//for (i = 0; i < strlen(songs_sum); i++) {
-	//	if (min_sum > songs_sum[i])
-	//		min_sum = songs_sum[i];
-	//}
-	printf("%d", min_sum);
+	while (low <= high) {
+		mid = (low + high) / 2; //최소 용량
 
+		if (count(mid) <= m && mid >= max) {
+			result = mid;
+			high = mid - 1;
+		}
+		else {
+			low = mid + 1;
+		}
+
+
+	}
+	printf("%d", result);
 	return 0;
+
 }
