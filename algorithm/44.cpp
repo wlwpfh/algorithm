@@ -1,31 +1,37 @@
 #include<stdio.h>
 #include<vector>
+#include<algorithm>
 using namespace std;
-int main44() {
-
-	int i, n, k, num = 0;
-
-	scanf("%d %d", &n, &k);
-
-	vector <int>arr(n + 1);
-	vector <int>exclude(n + 1);
-	int count = 1;
-	for (i = 1; i <= n; i++) {
-		arr[i] = i;
-	}
-
-	for (i = 1; i <= n - 1; i++) //한명씩 거르기
-	{
-		count++;
-
-		if (count == 3) {
-
-
-			count = 1;
+int n;
+int Count(int len, int x[]) {
+	int i, cnt = 1, pos = x[1];
+	for (i = 2; i <= n; i++) {
+		if (x[i] - pos >= len) {
+			cnt++;
+			pos = x[i];
 		}
 	}
+	return cnt;
+}
+int main44_() {
 
-	printf("%d", num);
-
+	int m, i, lt = 1, rt, mid, res;
+	scanf("%d %d", &n, &m);
+	int* x = new int[n + 1];
+	for (i = 1; i <= n; i++) {
+		scanf("%d", &x[i]);
+	}
+	sort(x + 1, x + n + 1);
+	rt = x[n];
+	while (lt <= rt) {
+		mid = (lt + rt) / 2;
+		if (Count(mid, x) >= m) {
+			res = mid;
+			lt = mid + 1;
+		}
+		else rt = mid - 1;
+	}
+	printf("%d", res);
+	delete[] x;
 	return 0;
 }
