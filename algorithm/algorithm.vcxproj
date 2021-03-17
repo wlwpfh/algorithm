@@ -189,6 +189,9 @@
     <ClCompile Include="8.c" />
     <ClCompile Include="9.c" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="49_.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
