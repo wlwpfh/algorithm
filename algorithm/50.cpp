@@ -3,8 +3,8 @@
 
 using namespace std;
 
-int main() {
-	int n, m, i, j, tmp, max = 0, sum = 0;
+int main50_() {
+	int n, m, i, j, h, w, s, k, max = 0, sum = 0;
 
 	scanf("%d %d", &n, &m);
 
@@ -15,20 +15,19 @@ int main() {
 			scanf("%d", &arr[i][j]);
 		}
 	}
+	scanf("%d %d", &h, &w);
 
-	//i대신해서 사용 
-	for (i = 0; i < n - 1; i++) {
-		for (j = 0; j < m - 2; j++) {
-			sum = arr[i][j] + arr[i + 1][j] + arr[i][j + 1] + arr[i + 1][j + 1] + arr[i][j + 2] + arr[i + 1][j + 2];
+	for (i = 0; i < n - h + 1; i++) {
+		for (j = 0; j < m - w + 1; j++) {
+			sum = 0;
 
-
+			for (s = i; s < i + h; s++)
+				for (k = j; k < j + w; k++)
+					sum = sum + arr[s][k];
 			if (sum > max)
 				max = sum;
 
 		}
-
-
-
 	}
 
 	printf("%d", max);
