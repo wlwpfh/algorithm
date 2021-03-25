@@ -5,10 +5,10 @@ void binary(int num) {
 		return;
 	}
 	else {
-		num = num / 2;
 		rest = num % 2;
-		printf("%d", rest);
+		num = num / 2;
 		binary(num);
+		printf("%d", rest);
 
 	}
 }
