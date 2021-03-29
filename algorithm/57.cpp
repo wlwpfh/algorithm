@@ -12,7 +12,7 @@ void binary(int num) {
 
 	}
 }
-int main() {
+int main57_() {
 	int num;
 	scanf("%d", &num);
 	binary(num);
