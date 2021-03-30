@@ -1,52 +1,33 @@
 #include<stdio.h>
 #include<stack>
+#include<vector>
 
 using namespace std;
 
-int main() {
-	int num, i, arr[30], count = 0, max = 0;
 
+int main55_() {
 
-	//1이 들어오면 바로 pop하기 
-
-	stack <int> s;
-
-	scanf("%d", &num);
-	max = num;
-
-	for (i = 0; i < num; i++) {
-		scanf("%d", &arr[i]);
-	}
-	int array_max = arr[0];
-	//count는 현재 제일 작은 애를 가리키기 
-
-	i = 0;
-
-	while (1) {
-
-		if (array_max >= arr[i]) {
-			s.push(arr[i]);
-			printf("P");
-		}
-		//		else if(arr[i]>array_max &&arr[i]==max){
-		//			s.push(arr[i]);
-		//			printf("P");
-		//			s.pop();
-		//			printf("O");
-		//		}
-		else {
-			while (!s.empty()) {
+	stack<int> s;
+	int i, j = 1, n, m;
+	scanf("%d", &n);
+	vector<char> str;
+	for (i = 1; i <= n; i++) {
+		scanf("%d", &m);
+		s.push(m);
+		str.push_back('P');
+		while (1) {
+			if (s.empty()) break;
+			if (j == s.top()) {
 				s.pop();
-				printf("O");
+				j++;
+				str.push_back('O');
 			}
-
-
+			else break;
 		}
-		i++;
-
-		if (i == num)
-			break;
-
 	}
-
-	re
+	if (!s.empty()) printf("impossible\n");
+	else {
+		for (i = 0; i < str.size(); i++) printf("%c", str[i]);
+	}
+	return 0;
+}
