@@ -1,21 +1,25 @@
 #include<stdio.h>
 
+int array[11];
 int num;
 
-//1부터 끝까지 출력하고 맨 마지막을 제외하고 출력하기
-//그렇게 한 다음에 하나만 남으면 다음 수로 넘어가서 반복하기
-
-
 void subset(int n) {
-	if (n > num)
-	{
+	int i;
+	if (n == num + 1) {
+		for (i = 1; i <= n; i++) {
+			if (array[i] == 1)
+				printf("%d ", i);
+		} //1로 된 것들을 출력해야 하니까 
+		printf("\n");
 		return;
 	}
 	else {
-		printf("%d ", n);
+		array[n] = 1; //왼쪽 자식
 		subset(n + 1);
-
+		array[n] = 0;
+		subset(n + 1);
 	}
+
 }
 int main() {
 
@@ -23,7 +27,6 @@ int main() {
 	scanf("%d", &num);
 	subset(1);
 
-	//부분집합의 개수: 2의 num승의 -1 (공집합은 빼니까) 
 
 	return 0;
 }
