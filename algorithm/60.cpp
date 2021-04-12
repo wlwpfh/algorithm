@@ -1,48 +1,41 @@
 #include<stdio.h>
 
-void subset(int*);
-int num, index = 1, left = 0, right = 0;
-int check[11];
+int num, arr[11], total = 0;
+bool flag = false;
+void subset_sum(int level, int sum) {
+	if (sum > (total / 2))
+		return; //넘어온 수가 큰 경우 
 
-void subset(int* arr) {
-	left = 0, right = 0;
-	int i;
-	if (index == num + 1)
-	{
-		for (i = 1; i <= num; i++) {
-			if (check[i] == 1)
-				left = left + arr[i];
-			else
-				right = right + arr[i];
-		}
-		if (left == right)
-			printf("YES");
-		else
-			printf("NO");
+	if (flag == true)
 		return;
+
+	if (level == num + 1) {
+		if (sum == (total - sum)) {
+			flag = true;
+		}
 	}
-
-	check[index] = 1;
-	subset(&arr[index + 1]);
-	check[index] = 0;
-	subset(&arr[index + 1]);
+	else {
+		subset_sum(level + 1, sum + arr[level]);
+		subset_sum(level + 1, sum);
+	}
 }
-int main() {
 
+int main60_() {
 	int i;
-	int arr[11];
+
 	scanf("%d", &num);
 
 	for (i = 1; i <= num; i++) {
-		scanf("%d", arr[i]);
+		scanf("%d", &arr[i]);
+		total = total + arr[i];
 	}
 
-	subset(&arr[1]);
+	subset_sum(1, 0);
 
-	//	if(left==right)
-	//		printf("YES \n");
-	//	else
-	//		printf("NO \n");
+	if (flag == true)
+		printf("YES \n");
+	else
+		printf("NO \n");
 
 	return 0;
 }
