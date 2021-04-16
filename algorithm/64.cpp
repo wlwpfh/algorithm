@@ -1,41 +1,32 @@
-#include<stdio.h>
-
-int n, m, count = 0, graph[21][21];
-
-void path_finding(int i, int j) {
-	if (i <= n && j <= n) {
-
-		if (j == n) { //끝내야함 
-			count++;
-		}
-		if (graph[i][j] == 1 && j > i) {
-			path_finding(j, 1);
-
-		}
-		else { //0인 경우 다른 길을 찾아야 함 
-			path_finding(i, j++);
-
+#include<stdio.h>	
+int map[30][30], ch[30], cnt = 0, n;
+void DFS(int v) {
+	int i;
+	if (v == n) {
+		cnt++;
+	}
+	else {
+		for (i = 1; i <= n; i++) {
+			if (map[v][i] == 1 && ch[i] == 0) {
+				ch[i] = 1;
+				DFS(i);
+				ch[i] = 0;
+			}
 		}
 	}
-
 }
+
 int main() {
-	int i, j, a, b;
-
+	freopen("input.txt", "rt", stdin);
+	int m, i, j, a, b, c;
 	scanf("%d %d", &n, &m);
-
 	for (i = 1; i <= m; i++) {
 		scanf("%d %d", &a, &b);
-		graph[a][b] = 1;
-
+		map[a][b] = 1;
 	}
-
-
-
-
-	path_finding(1, 1);
-
-	printf("%d", count);
-
+	ch[1] = 1;
+	DFS(1);
+	printf("%d\n", cnt);
 	return 0;
 }
+
