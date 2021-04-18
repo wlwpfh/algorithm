@@ -1,19 +1,18 @@
 #include<stdio.h>
 
-int maze[8][8], count = 0;
+int maze[8][8], check[8][8], count = 0;
 
 void findingPath(int i, int j) {
 	if (i == 7 && j == 7) {
 		count++;
-		return;
 	}
-	if (maze[i][j] == 0) { //답인 경우 
-		findingPath(i, j++);
-		findingPath(i++, j);
-
-	}
-	else { //1인 경우 왔던 길 되돌아가기 
-
+	if (maze[i][j] == 0 && check[i][j] == 0) { //답인 경우 
+		check[i][j++] = 1;
+		findingPath(i, j);
+		check[i][j] = 0;
+		check[i++][j] = 1;
+		findingPath(i, j);
+		check[i][j] = 0;
 	}
 }
 
