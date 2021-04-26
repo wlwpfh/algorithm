@@ -206,6 +206,7 @@
     <ClCompile Include="66.cpp" />
     <ClCompile Include="66_2.cpp" />
     <ClCompile Include="67.cpp" />
+    <ClCompile Include="68.cpp" />
     <ClCompile Include="7.c" />
     <ClCompile Include="8.c" />
     <ClCompile Include="9.c" />
