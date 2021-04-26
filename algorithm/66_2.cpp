@@ -4,20 +4,17 @@
 using namespace std;
 
 int n, m, count;
-int check[30];
+int check[30], path[30];
 vector<int> adlist[30];
 
-void path_finding(int num) {
-	int i;
+void path_finding(int num, int level) {
+	int i, j;
 	if (num == n) {
 		count++;
 
-		for (i = 0; i < num; i++)
-			if (check[i] == 1)
-			{
-				printf("%d ", i);
-			}
-		printf("5");
+		for (j = 0; j < level; j++) {
+			printf("%d ", path[j]);
+		}
 		printf("\n");
 
 	}
@@ -25,7 +22,8 @@ void path_finding(int num) {
 		for (i = 0; i < adlist[num].size(); i++) {
 			if (check[adlist[num][i]] == 0) {
 				check[adlist[num][i]] = 1;
-				path_finding(adlist[num][i]);
+				path[level] = adlist[num][i];
+				path_finding(adlist[num][i], level + 1);
 				check[adlist[num][i]] = 0;
 			}
 		}
@@ -42,7 +40,8 @@ int main() {
 		adlist[a].push_back(b);
 	}
 	check[1] = 1;
-	path_finding(1);
+	path[0] = 1;
+	path_finding(1, 1);
 
 	printf("%d \n", count);
 	return 0;
