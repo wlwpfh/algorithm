@@ -240,6 +240,9 @@
     <ClCompile Include="innerproduct.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="prime.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">

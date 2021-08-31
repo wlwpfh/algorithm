@@ -214,6 +214,7 @@
     <ClCompile Include="9.c" />
     <ClCompile Include="innerproduct.cpp" />
     <ClCompile Include="lotto.cpp" />
+    <ClCompile Include="prime.c" />
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp" />
