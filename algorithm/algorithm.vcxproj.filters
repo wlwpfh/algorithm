@@ -237,6 +237,9 @@
     <ClCompile Include="lotto.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="innerproduct.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
