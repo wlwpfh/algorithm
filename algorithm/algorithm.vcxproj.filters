@@ -240,13 +240,13 @@
     <ClCompile Include="innerproduct.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="prime.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="imitationtest.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="newid.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="prime.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
