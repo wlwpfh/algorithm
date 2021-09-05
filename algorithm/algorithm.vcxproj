@@ -216,6 +216,7 @@
     <ClCompile Include="innerproduct.cpp" />
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="newid.cpp" />
+    <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />
   </ItemGroup>
   <ItemGroup>
