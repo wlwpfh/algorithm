@@ -222,6 +222,7 @@
     <ClCompile Include="prime.cpp" />
     <ClCompile Include="sortingboxer.cpp" />
     <ClCompile Include="sumofmatrix.cpp" />
+    <ClCompile Include="ternaryfilp.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp" />
