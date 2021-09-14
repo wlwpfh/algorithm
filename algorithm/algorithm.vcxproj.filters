@@ -258,6 +258,9 @@
     <ClCompile Include="sortingboxer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="sumofmatrix.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
