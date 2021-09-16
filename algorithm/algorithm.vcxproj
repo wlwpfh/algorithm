@@ -216,6 +216,7 @@
     <ClCompile Include="dividearray.cpp" />
     <ClCompile Include="imitationtest.cpp" />
     <ClCompile Include="innerproduct.cpp" />
+    <ClCompile Include="kthnum.cpp" />
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="ponketmon.cpp" />
