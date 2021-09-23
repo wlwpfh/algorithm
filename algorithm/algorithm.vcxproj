@@ -222,6 +222,7 @@
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="notforend.cpp" />
+    <ClCompile Include="numstringeng.cpp" />
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />
     <ClCompile Include="sortingboxer.cpp" />
