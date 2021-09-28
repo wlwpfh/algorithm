@@ -233,6 +233,7 @@
     <ClCompile Include="sortingboxer.cpp" />
     <ClCompile Include="sumofmatrix.cpp" />
     <ClCompile Include="ternaryfilp.cpp" />
+    <ClCompile Include="xgapnnum.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp" />
