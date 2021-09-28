@@ -212,6 +212,7 @@
     <ClCompile Include="70.cpp" />
     <ClCompile Include="8.c" />
     <ClCompile Include="9.c" />
+    <ClCompile Include="addeachnum.cpp" />
     <ClCompile Include="addminusplus.cpp" />
     <ClCompile Include="addnums.cpp" />
     <ClCompile Include="atheleticcloth.cpp" />
