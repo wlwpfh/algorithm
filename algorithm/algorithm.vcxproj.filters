@@ -285,6 +285,9 @@
     <ClCompile Include="bringmiddleletter.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="makeweirdword.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
