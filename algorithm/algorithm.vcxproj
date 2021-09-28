@@ -230,6 +230,7 @@
     <ClCompile Include="notforend.cpp" />
     <ClCompile Include="numstringeng.cpp" />
     <ClCompile Include="oddeven.cpp" />
+    <ClCompile Include="pandycount.cpp" />
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />
     <ClCompile Include="sortingboxer.cpp" />
