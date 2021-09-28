@@ -231,6 +231,7 @@
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />
     <ClCompile Include="sortingboxer.cpp" />
+    <ClCompile Include="squarestar.cpp" />
     <ClCompile Include="sumofmatrix.cpp" />
     <ClCompile Include="ternaryfilp.cpp" />
     <ClCompile Include="xgapnnum.cpp" />
