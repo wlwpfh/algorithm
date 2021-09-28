@@ -217,6 +217,7 @@
     <ClCompile Include="atheleticcloth.cpp" />
     <ClCompile Include="bringmiddleletter.cpp" />
     <ClCompile Include="dividearray.cpp" />
+    <ClCompile Include="hashad.cpp" />
     <ClCompile Include="imitationtest.cpp" />
     <ClCompile Include="innerproduct.cpp" />
     <ClCompile Include="kthnum.cpp" />
