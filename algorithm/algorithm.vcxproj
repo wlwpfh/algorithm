@@ -217,6 +217,7 @@
     <ClCompile Include="addnums.cpp" />
     <ClCompile Include="atheleticcloth.cpp" />
     <ClCompile Include="bringmiddleletter.cpp" />
+    <ClCompile Include="collatzconjecture.cpp" />
     <ClCompile Include="dividearray.cpp" />
     <ClCompile Include="hashad.cpp" />
     <ClCompile Include="hidenums.cpp" />

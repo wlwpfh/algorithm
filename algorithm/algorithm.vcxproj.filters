@@ -315,6 +315,9 @@
     <ClCompile Include="stringbasic.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="collatzconjecture.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
