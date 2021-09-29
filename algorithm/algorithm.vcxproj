@@ -238,6 +238,7 @@
     <ClCompile Include="sortingboxer.cpp" />
     <ClCompile Include="squarestar.cpp" />
     <ClCompile Include="stringbasic.cpp" />
+    <ClCompile Include="subacksu.cpp" />
     <ClCompile Include="sumofmatrix.cpp" />
     <ClCompile Include="ternaryfilp.cpp" />
     <ClCompile Include="xgapnnum.cpp" />
