@@ -231,6 +231,7 @@
     <ClCompile Include="makeweirdword.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="notforend.cpp" />
+    <ClCompile Include="numsdes.cpp" />
     <ClCompile Include="numstringeng.cpp" />
     <ClCompile Include="numsum.cpp" />
     <ClCompile Include="oddeven.cpp" />
