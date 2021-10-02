@@ -230,6 +230,7 @@
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="makeavg.cpp" />
     <ClCompile Include="makeweirdword.cpp" />
+    <ClCompile Include="mutualtest.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="notforend.cpp" />
     <ClCompile Include="numsdes.cpp" />

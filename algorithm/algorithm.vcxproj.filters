@@ -342,6 +342,9 @@
     <ClCompile Include="findkim.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="mutualtest.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
