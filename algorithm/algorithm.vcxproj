@@ -247,6 +247,7 @@
     <ClCompile Include="sortingboxer.cpp" />
     <ClCompile Include="squarestar.cpp" />
     <ClCompile Include="stringbasic.cpp" />
+    <ClCompile Include="stringdes.cpp" />
     <ClCompile Include="stringtoint.cpp" />
     <ClCompile Include="subacksu.cpp" />
     <ClCompile Include="sumofdivisor.cpp" />
