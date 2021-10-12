@@ -228,6 +228,7 @@
     <ClCompile Include="findprime.cpp" />
     <ClCompile Include="dividearray.cpp" />
     <ClCompile Include="findkim.cpp" />
+    <ClCompile Include="gcdlcm.cpp" />
     <ClCompile Include="hashad.cpp" />
     <ClCompile Include="hatesamenum.cpp" />
     <ClCompile Include="hidenums.cpp" />
