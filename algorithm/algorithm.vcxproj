@@ -228,6 +228,7 @@
     <ClCompile Include="dividearray.cpp" />
     <ClCompile Include="findkim.cpp" />
     <ClCompile Include="hashad.cpp" />
+    <ClCompile Include="hatesamenum.cpp" />
     <ClCompile Include="hidenums.cpp" />
     <ClCompile Include="imitationtest.cpp" />
     <ClCompile Include="innerproduct.cpp" />
