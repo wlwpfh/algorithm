@@ -9,6 +9,7 @@ string to_binary(int n) {
         else s = "0" + s;
         n >>= 1;
     }
+    //printf("%s ",s.c_str());
     return s;
 }
 vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
@@ -16,27 +17,28 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
     string a, b, c;
     int i, j;
     long long tmp_a, tmp_b, tmp;
+
     for (i = 0; i < n; i++) {
         a = to_binary(arr1[i]);
         b = to_binary(arr2[i]); //2진법으로 만들어서
-        tmp_a = stoi(a);
-        tmp_b = stoi(b);
+        //printf("%s %s \n",a.c_str(), b.c_str());
+        tmp_a = stoll(a);
+        tmp_b = stoll(b);
         tmp = tmp_a + tmp_b;
 
-        printf("%d+ %d= %d \n", tmp_a, tmp_b, tmp);
+        //printf("%d+ %d= %d \n",tmp_a,tmp_b,tmp);
         c = to_string(tmp); //string으로 만들었음
 
-        //printf("%s \n \n",c.c_str());
+        //printf("%s ",c.c_str());
         if (c.length() == n)
-            printf("%s의 현재 길이는 %d다 \n", c.c_str(), c.length());
+            ;
         else {
             tmp = n - c.length();
             for (j = 0; j < tmp; j++) {
                 c.insert(0, "0");
             }
         }
-        for (j = 0; j < c.length(); j++) {
-            //printf("%c ",c[j]);
+        for (j = 0; j < n; j++) {
             if (c[j] != '0') {
                 answer[i].push_back('#');
             }
@@ -44,6 +46,7 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
                 answer[i].push_back(' ');
             }
         }
+        //printf("%s %s \n",c.c_str(),answer[i].c_str());
     } //2진법으로 만듦. 
     return answer;
 }
