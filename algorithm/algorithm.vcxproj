@@ -237,6 +237,7 @@
     <ClCompile Include="imitationtest.cpp" />
     <ClCompile Include="innerproduct.cpp" />
     <ClCompile Include="inttoarray.cpp" />
+    <ClCompile Include="jadencasestring.cpp" />
     <ClCompile Include="kthnum.cpp" />
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="makeavg.cpp" />
