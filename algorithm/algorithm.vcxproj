@@ -250,6 +250,7 @@
     <ClCompile Include="numstringeng.cpp" />
     <ClCompile Include="numsum.cpp" />
     <ClCompile Include="oddeven.cpp" />
+    <ClCompile Include="openchatroom.cpp" />
     <ClCompile Include="pandycount.cpp" />
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />
