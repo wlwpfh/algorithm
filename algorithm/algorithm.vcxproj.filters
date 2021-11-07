@@ -396,6 +396,9 @@
     <ClCompile Include="openchatroom.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="budget.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
