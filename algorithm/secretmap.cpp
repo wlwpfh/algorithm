@@ -2,39 +2,42 @@
 #include <vector>
 
 using namespace std;
-string to_binary(int n) {
+
+string to_binary(int m) {
     string s = "";
-    while (n > 0) {
-        if (n % 2 == 1) s = "1" + s;
-        else s = "0" + s;
-        n >>= 1;
+    if (m == 0)
+        return "0";
+    else {
+        while (m > 0) {
+            if (m % 2 == 1) s = "1" + s;
+            else s = "0" + s;
+            m >>= 1;
+        }
+        return s;
     }
-    //printf("%s ",s.c_str());
-    return s;
 }
 vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
-    vector<string> answer(n);
+
     string a, b, c;
     int i, j;
-    long long tmp_a, tmp_b, tmp;
+    long long tmp_a = 0, tmp_b = 0, tmp = 0;
+    vector<string> answer(n);
 
     for (i = 0; i < n; i++) {
         a = to_binary(arr1[i]);
         b = to_binary(arr2[i]); //2진법으로 만들어서
-        //printf("%s %s \n",a.c_str(), b.c_str());
+        printf("%s %s \n", a.c_str(), b.c_str());
         tmp_a = stoll(a);
         tmp_b = stoll(b);
         tmp = tmp_a + tmp_b;
 
-        //printf("%d+ %d= %d \n",tmp_a,tmp_b,tmp);
         c = to_string(tmp); //string으로 만들었음
 
-        //printf("%s ",c.c_str());
         if (c.length() == n)
             ;
         else {
-            tmp = n - c.length();
-            for (j = 0; j < tmp; j++) {
+            int t = n - c.length();
+            for (j = 0; j < t; j++) {
                 c.insert(0, "0");
             }
         }
@@ -46,7 +49,6 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
                 answer[i].push_back(' ');
             }
         }
-        //printf("%s %s \n",c.c_str(),answer[i].c_str());
-    } //2진법으로 만듦. 
+    }
     return answer;
 }
