@@ -15,9 +15,10 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
         else
             q.push(tmp / speeds[i] + 1);
     }
+    tmp = q.front();
     while (!q.empty()) {
         count = 0;
-        tmp = q.front();
+
         q.pop();
         count++;
         if (tmp >= q.front()) { //앞에 나보다 더 값이 작은 애들이 있으면 그걸 세서 넣기
@@ -27,6 +28,7 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
 
 
         }
+        tmp = q.front();
         answer.push_back(count);
     }
     return answer;
