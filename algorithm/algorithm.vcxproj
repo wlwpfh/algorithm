@@ -245,6 +245,7 @@
     <ClCompile Include="makeavg.cpp" />
     <ClCompile Include="makeweirdword.cpp" />
     <ClCompile Include="minandmax.cpp" />
+    <ClCompile Include="morespicy.cpp" />
     <ClCompile Include="mutualtest.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="notforend.cpp" />
