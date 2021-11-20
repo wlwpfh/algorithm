@@ -243,6 +243,7 @@
     <ClCompile Include="inttoarray.cpp" />
     <ClCompile Include="jadencasestring.cpp" />
     <ClCompile Include="kthnum.cpp" />
+    <ClCompile Include="listofphonenum.cpp" />
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="makeavg.cpp" />
     <ClCompile Include="makeweirdword.cpp" />
