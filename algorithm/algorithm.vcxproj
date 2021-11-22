@@ -259,6 +259,8 @@
     <ClCompile Include="oddeven.cpp" />
     <ClCompile Include="openchatroom.cpp" />
     <ClCompile Include="pandycount.cpp" />
+    <ClCompile Include="projectbillion.cpp" />
+    <ClCompile Include="simple369game.cpp" />
     <ClCompile Include="wordlength.cpp" />
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />

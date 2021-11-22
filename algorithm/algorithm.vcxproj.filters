@@ -423,6 +423,12 @@
     <ClCompile Include="wordlength.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="simple369game.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="projectbillion.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
