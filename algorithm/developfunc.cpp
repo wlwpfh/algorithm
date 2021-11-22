@@ -16,20 +16,24 @@ vector<int> solution(vector<int> progresses, vector<int> speeds) {
             q.push(tmp / speeds[i] + 1);
     }
     tmp = q.front();
-    while (!q.empty()) {
-        count = 0;
-
-        q.pop();
-        count++;
-        if (tmp >= q.front()) { //앞에 나보다 더 값이 작은 애들이 있으면 그걸 세서 넣기
+    q.pop();
+    count = 1;
+    while (1) {
+        if (tmp >= q.front()) {
             count++;
-            printf("%d가 %d보다 작기 때문에 같이 나온다. \n", q.front(), tmp);
             q.pop();
-
+        }
+        else {
+            tmp = q.front();
+            q.pop();
+            answer.push_back(count);
+            count = 1;
 
         }
-        tmp = q.front();
-        answer.push_back(count);
+        if (q.empty()) {
+            answer.push_back(count);
+            break;
+        }
     }
     return answer;
 }
