@@ -259,6 +259,7 @@
     <ClCompile Include="oddeven.cpp" />
     <ClCompile Include="openchatroom.cpp" />
     <ClCompile Include="pandycount.cpp" />
+    <ClCompile Include="wordlength.cpp" />
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />
     <ClCompile Include="removemin.cpp" />
