@@ -159,6 +159,7 @@
     <ClCompile Include="22.cpp" />
     <ClCompile Include="23.c" />
     <ClCompile Include="24.cpp" />
+    <ClCompile Include="24hour.cpp" />
     <ClCompile Include="25.c" />
     <ClCompile Include="26.c" />
     <ClCompile Include="27.cpp" />

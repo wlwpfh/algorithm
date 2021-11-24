@@ -435,6 +435,9 @@
     <ClCompile Include="gugudan2.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="24hour.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
