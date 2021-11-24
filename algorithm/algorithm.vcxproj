@@ -236,6 +236,7 @@
     <ClCompile Include="findkim.cpp" />
     <ClCompile Include="findrem1.cpp" />
     <ClCompile Include="gcdlcm.cpp" />
+    <ClCompile Include="gugudan2.cpp" />
     <ClCompile Include="hashad.cpp" />
     <ClCompile Include="hatesamenum.cpp" />
     <ClCompile Include="hidenums.cpp" />
