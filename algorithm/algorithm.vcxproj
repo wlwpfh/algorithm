@@ -261,6 +261,7 @@
     <ClCompile Include="oddeven.cpp" />
     <ClCompile Include="openchatroom.cpp" />
     <ClCompile Include="pandycount.cpp" />
+    <ClCompile Include="printer.cpp" />
     <ClCompile Include="projectbillion.cpp" />
     <ClCompile Include="simple369game.cpp" />
     <ClCompile Include="teamassignement.cpp" />
