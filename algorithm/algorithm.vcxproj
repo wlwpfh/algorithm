@@ -232,6 +232,7 @@
     <ClCompile Include="countofdivandadd.cpp" />
     <ClCompile Include="determinesqrt.cpp" />
     <ClCompile Include="developfunc.cpp" />
+    <ClCompile Include="fake.cpp" />
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="findprime.cpp" />
     <ClCompile Include="dividearray.cpp" />
