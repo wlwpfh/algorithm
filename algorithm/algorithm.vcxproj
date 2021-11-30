@@ -164,6 +164,7 @@
     <ClCompile Include="26.c" />
     <ClCompile Include="27.cpp" />
     <ClCompile Include="28.cpp" />
+    <ClCompile Include="2805.cpp" />
     <ClCompile Include="29.c" />
     <ClCompile Include="3.c" />
     <ClCompile Include="31.c" />
