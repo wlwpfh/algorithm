@@ -225,6 +225,7 @@
     <ClCompile Include="addnums.cpp" />
     <ClCompile Include="addtwonums.cpp" />
     <ClCompile Include="atheleticcloth.cpp" />
+    <ClCompile Include="bestalbum.cpp" />
     <ClCompile Include="bringmiddleletter.cpp" />
     <ClCompile Include="budget.cpp" />
     <ClCompile Include="caesarcipher.cpp" />
