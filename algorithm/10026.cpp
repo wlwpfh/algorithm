@@ -1,43 +1,42 @@
-
 #include<queue>
 #include<iostream>
 using namespace std;
 
+int dx[4] = { -1,1,0,0 };
+int dy[4] = { 0,0,-1,1 };
+char c[101][101];
+int checked[101][101];
+int color[101][101];
+int redgreen[101][101];
 int main() {
 	int n;
 	scanf("%d", &n);
 
 	int i, j;
-	int dx[4] = { -1,1,0,0 };
-	int dy[4] = { 0,0,-1,1 };
-	char c[101][101];
-	int checked[101][101];
-	//int answer[101][101];
-	//같은 것이라고 판단되면 answer++;
+
 	int answer = 0;
 	for (i = 0; i < n; i++) {
 		for (j = 0; j < n; j++) {
 			cin >> c[i][j];
+
 		}
 	}
-	queue<pair<int, int> >q; //좌표  
-	//int checked[101][101];
-	for (i = 0; i < n; i++) {
-		for (j = 0; j < n; j++) {
-			printf("%c ", c[i][j]);
-		}
-		printf("\n");
-	} //잘 들어감. 
+	queue<pair<int, int> >q;
+	//	for(i=0;i<n;i++){
+	//		for(j=0;j<n;j++){
+	//			printf("%c ",c[i][j]);
+	//		}
+	//		printf("\n");
+	//	} //잘 들어감. 
 
 	q.push(make_pair(0, 0));
-	//answer[0][0]=1;
+
 	checked[0][0] = 1;
 	int x, y;
 	char tmp = c[0][0];
-	answer = 1;
+	color[0][0] = 1;
+	redgreen[0][0] = 1;
 	while (!q.empty()) {
-		//if(c[i][j]가 뭐면 ㄱㅊ
-		//사방이 다 다르면 ++; 
 		x = q.front().first;
 		y = q.front().second;
 		q.pop();
@@ -48,14 +47,44 @@ int main() {
 
 			if (nx < 0 || nx >= n || ny < 0 || ny >= n)
 				continue;
-			if (tmp != c[nx][ny] && checked[nx][ny] == 0) {
-				checked[nx][ny] = 1;
-				answer++;
-				tmp = c[nx][ny];
+			if (checked[nx][ny] == 1)
+				continue;
+			if (c[x][y] != c[nx][ny] && color[nx][ny] == 0) {
+				//checked[nx][ny]=1;
+				//tmp=c[nx][ny];
+				color[nx][ny] = color[x][y] + 1;
+				//q.push(make_pair(nx,ny));
+
 			}
+			else if (c[x][y] == c[nx][ny] && color[nx][ny] == 0) {
+				color[nx][ny] = color[x][y];
+				//checked[nx][ny]=1;
+			}
+			if ((c[x][y] == 'R' && c[nx][ny] == 'G') || (c[x][y] == 'G' && c[nx][ny] == 'R') || c[x][y] == c[nx][ny]) { //적록색약  
+				redgreen[nx][ny] = redgreen[x][y];
+			}
+			else {
+				redgreen[nx][ny] = redgreen[x][y] + 1;
+			}
+			checked[nx][ny] = 1;
+			q.push(make_pair(nx, ny));
 		}
 
 	}
-	printf("%d", answer);
+
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++)
+			printf("%d ", color[i][j]);
+		printf("\n");
+	}
+	printf("\n \n");
+	for (i = 0; i < n; i++) {
+		for (j = 0; j < n; j++)
+			printf("%d ", redgreen[i][j]);
+		printf("\n");
+	}
+	printf("%d \n", color[n - 1][n - 1]);
+	printf("%d \n", redgreen[n - 1][n - 1]);
+	//	printf("%d",answer);
 	return 0;
 }
