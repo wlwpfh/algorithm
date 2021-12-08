@@ -161,6 +161,7 @@
     <ClCompile Include="17.cpp" />
     <ClCompile Include="18.c" />
     <ClCompile Include="18312.cpp" />
+    <ClCompile Include="18406.cpp" />
     <ClCompile Include="19.c" />
     <ClCompile Include="1week_lackmoney.cpp" />
     <ClCompile Include="2.c" />
