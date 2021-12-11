@@ -15,15 +15,20 @@ int main() {
 		}
 	}
 	dp[0][0] = arr[0][0];
-	for (i = 0; i < n - 1; i++) {
-		for (j = i - 1; j < i; j++) {
-			dp[i + 1][j] = dp[i + 1][j] + max(arr[i][j], arr[i][++j]);
+	for (i = 1; i < n; i++) {
+		for (j = 0; j < n - 1; j++) {
+			dp[i][j] = dp[i - 1][j] + max(arr[i - 1][j], arr[i - 1][j + 1]);
 			printf("dp[%d][%d]=%d \n", i, j, dp[i][j]);
 		}
 
 	}
 
-	//	printf("%d", max(dp[n-1][0], dp[n-1][n-1]));
+	int max = 0;
+	for (i = 0; i < 501; i++) {
+		if (max < dp[n - 1][i])
+			max = dp[n - 1][i];
+	}
+	printf("%d", max);
 
 
 	return 0;
