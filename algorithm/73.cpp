@@ -5,9 +5,9 @@ using namespace std;
 
 int main() {
 	int n, root = 0;
-	priority_queue<int> pq;
+	priority_queue<int, vector<int> > pq;
 	vector<int> v;
-	scanf("%d", &n);
+	//scanf("%d",&n);
 
 	while (1) {
 		scanf("%d", &n);
@@ -16,22 +16,17 @@ int main() {
 			pq.pop();
 			v.push_back(root);
 		}
-		if (n == -1)
+		else if (n == -1)
 			break;
-
-		pq.push(n);
+		else
+			pq.push(n);
 	}
 
 	for (int i = 0; i < v.size(); i++) {
 		printf("%d \n", v[i]);
 	}
 
-	//	for(int i=0;i<pq.size();i++){
-	//		if(!pq.empty()){
-	//			printf("%d ",pq.top());
-	//			pq.pop();
-	//		}
-	//	}
+
 
 	return 0;
 }
