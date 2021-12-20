@@ -7,12 +7,12 @@ int dx[4] = { -1,1,0,0 };
 int dy[4] = { 0,0,-1,1 };
 char c[101][101];
 int checked[101][101];
-
+queue<pair<int, int> >q;
 
 int n;
-int i;
+
 void bfs(int x, int y, bool redgreen) {
-	queue<pair<int, int> >q;
+
 	q.push(make_pair(x, y));
 	checked[x][y] = 1;
 
@@ -21,29 +21,29 @@ void bfs(int x, int y, bool redgreen) {
 		int cy = q.front().second;
 		q.pop();
 
-		for (i = 0; i < 4; i++) {
+		for (int i = 0; i < 4; i++) {
 			int nx = cx + dx[i];
 			int ny = cy + dy[i];
 
 			if (nx < 0 || nx >= n || ny < 0 || ny >= n)
 				continue;
-			if (checked[nx][ny] == 1)
-				continue;
+
+
 			if (redgreen == true) {
-				if (c[cx][cy] == 'R' || c[cx][cy] == 'G') {
-					if (c[nx][ny] == 'G' || c[nx][ny] == 'R') {
-						q.push(make_pair(nx, ny));
+				if ((c[cx][cy] == 'R' || c[cx][cy] == 'G') && (c[nx][ny] == 'R' || c[nx][ny] == 'G')) {
+					if (checked[nx][ny] == 0) {
 						checked[nx][ny] = 1;
+						q.push(make_pair(nx, ny));
 					}
 				}
 			}
 			else {
-				if (c[cx][cy] == c[nx][ny]) {
-					q.push(make_pair(nx, ny));
+				if (checked[nx][ny] == 0) {
 					checked[nx][ny] = 1;
-
+					q.push(make_pair(nx, ny));
 				}
 			}
+
 
 		}
 	}
@@ -52,7 +52,7 @@ void bfs(int x, int y, bool redgreen) {
 
 
 int main() {
-	int n;
+
 	scanf("%d", &n);
 
 	int i, j;
@@ -88,7 +88,7 @@ int main() {
 		}
 	}
 
-	printf("%d \n", a);
+	printf("%d ", a);
 	printf("%d \n", b);
 
 	return 0;
