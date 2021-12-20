@@ -11,24 +11,12 @@ struct Info {
 };
 
 bool comp(Info a, Info b) {
-	if (a.kor > b.kor)
-		return true;
-	else if (a.kor == b.kor) {
-		if (a.eng > b.eng)
-			return true;
-		else if (a.eng == b.eng)
-			if (a.math > b.math)
-				return true;
-			else if (a.math == b.math)
-				if (a.name > b.name)
-					return true;
-				else
-					return false;
-			else
-				return false;
-	}
-	else
-		return false;
+	if (a.kor == b.kor && a.eng == b.eng && a.math == b.math) return a.name < b.name; //이름 오름차순
+	if (a.kor == b.kor && a.eng == b.eng) return a.math > b.math;
+	if (a.kor == b.kor) return  a.eng < b.eng;
+	return a.kor > b.kor;
+
+
 }
 
 int main() {
