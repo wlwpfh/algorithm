@@ -26,24 +26,24 @@ void bfs(int x, int y, bool redgreen) {
 			int ny = cy + dy[i];
 
 			if (nx < 0 || nx >= n || ny < 0 || ny >= n)
-				;
-			else {
+				continue;
 
-				if (redgreen == true) {
-					if ((c[cx][cy] == 'R' || c[cx][cy] == 'G') && (c[nx][ny] == 'R' || c[nx][ny] == 'G')) {
-						if (checked[nx][ny] == 0) {
-							checked[nx][ny] = 1;
-							q.push(make_pair(nx, ny));
-						}
-					}
-				}
-				else {
+
+			if (redgreen == true) {
+				if ((c[cx][cy] == 'R' || c[cx][cy] == 'G') && (c[nx][ny] == 'R' || c[nx][ny] == 'G') || c[nx][ny] == c[x][y]) {
 					if (checked[nx][ny] == 0) {
 						checked[nx][ny] = 1;
 						q.push(make_pair(nx, ny));
 					}
 				}
 			}
+			else {
+				if (checked[nx][ny] == 0 && c[nx][ny] == c[x][y]) {
+					checked[nx][ny] = 1;
+					q.push(make_pair(nx, ny));
+				}
+			}
+
 
 
 
@@ -90,8 +90,8 @@ int main() {
 		}
 	}
 
-	printf("%d ", a);
-	printf("%d \n", b);
+	printf("%d %d", a, b);
+
 
 	return 0;
 
