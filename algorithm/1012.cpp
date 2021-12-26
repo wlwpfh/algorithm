@@ -10,9 +10,9 @@ int dy[4] = { 0,0,-1,1 };
 int checked[51][51];
 int baechu[51][51];
 queue< pair<int, int> >q;
-void findWorms(int b, int a) {
-	checked[b][a] = 1;
-	q.push(make_pair(b, a));
+void findWorms(int a, int b) {
+	checked[a][b] = 1;
+	q.push(make_pair(a, b));
 
 	while (!q.empty()) {
 		int y = q.front().first;
@@ -23,7 +23,7 @@ void findWorms(int b, int a) {
 			int ny = y + dy[i];
 			int nx = x + dx[i];
 
-			if (ny<0 || ny>m || nx<0 || nx>n)
+			if (ny<0 || ny>n || nx<0 || nx>m)
 				continue;
 
 
@@ -67,6 +67,7 @@ int main() {
 			for (b = 0; b < m; b++) {
 				if (checked[a][b] == 0 && baechu[a][b] == 1) {
 					findWorms(a, b);
+					// 1차원 2차원  
 					worms[c]++;
 				}
 			}
