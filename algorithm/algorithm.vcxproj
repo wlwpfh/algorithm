@@ -240,6 +240,7 @@
     <ClCompile Include="75_1.cpp" />
     <ClCompile Include="75_2.cpp" />
     <ClCompile Include="76.cpp" />
+    <ClCompile Include="77.cpp" />
     <ClCompile Include="8.c" />
     <ClCompile Include="84.cpp" />
     <ClCompile Include="8week_minrect.cpp" />
