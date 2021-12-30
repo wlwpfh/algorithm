@@ -16,7 +16,7 @@ struct City {
 		c2 = b;
 		value = c;
 	}
-	bool operator<(City& b) {
+	bool operator<(const City& b)const {
 		return value < b.value;
 	}
 };
@@ -52,9 +52,13 @@ int main() {
 	}
 
 	sort(city.begin(), city.end());
-	//가중치 값에 의해 오름차순 정렬  
+	//가중치 값에 의해 오름차순 정렬 
 
-	for (i = 1; i <= m; i++) {
+	for (i = 1; i <= n; i++) {
+		printf("%d - %d : %d \n", city[i].c1, city[i].c2, city[i].value);
+	}
+
+	for (i = 0; i < m; i++) {
 		int c1 = Find(city[i].c1);
 		int c2 = Find(city[i].c2);
 		//서로의 루트찾기  
