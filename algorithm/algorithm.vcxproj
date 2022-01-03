@@ -201,6 +201,7 @@
     <ClCompile Include="32.c" />
     <ClCompile Include="33.c" />
     <ClCompile Include="34.c" />
+    <ClCompile Include="3425.cpp" />
     <ClCompile Include="35.c" />
     <ClCompile Include="36.c" />
     <ClCompile Include="37.c" />
