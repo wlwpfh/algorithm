@@ -576,6 +576,9 @@
     <ClCompile Include="bfs.cpp">
       <Filter>소스 파일\cpbook</Filter>
     </ClCompile>
+    <ClCompile Include="cyclecheck.cpp">
+      <Filter>소스 파일\cpbook</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
