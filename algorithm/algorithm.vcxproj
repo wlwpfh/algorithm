@@ -263,6 +263,7 @@
     <ClCompile Include="addtwonums.cpp" />
     <ClCompile Include="atheleticcloth.cpp" />
     <ClCompile Include="bestalbum.cpp" />
+    <ClCompile Include="bfs.cpp" />
     <ClCompile Include="bringmiddleletter.cpp" />
     <ClCompile Include="budget.cpp" />
     <ClCompile Include="caesarcipher.cpp" />
