@@ -270,6 +270,7 @@
     <ClCompile Include="countofdivandadd.cpp" />
     <ClCompile Include="determinesqrt.cpp" />
     <ClCompile Include="developfunc.cpp" />
+    <ClCompile Include="dfs_cc.cpp" />
     <ClCompile Include="fake.cpp" />
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="findprime.cpp" />
@@ -305,6 +306,7 @@
     <ClCompile Include="projectbillion.cpp" />
     <ClCompile Include="simple369game.cpp" />
     <ClCompile Include="teamassignement.cpp" />
+    <ClCompile Include="tmp.cpp" />
     <ClCompile Include="wordlength.cpp" />
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />

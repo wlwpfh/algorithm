@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\cpbook">
+      <UniqueIdentifier>{1b7f6c32-332b-4d42-ab44-0cf42d38fa6b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="1.c">
@@ -562,6 +565,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="3067.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="dfs_cc.cpp">
+      <Filter>소스 파일\cpbook</Filter>
+    </ClCompile>
+    <ClCompile Include="tmp.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
