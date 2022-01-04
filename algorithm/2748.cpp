@@ -4,7 +4,7 @@ using namespace std;
 
 long long arr[90];
 
-int fibo(int n) {
+long long fibo(int n) {
 	if (n == 1 || n == 2)
 		return 1;
 	if (arr[n] != 0)
