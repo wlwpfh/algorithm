@@ -615,6 +615,9 @@
     <ClCompile Include="trie.cpp">
       <Filter>소스 파일\cpbook</Filter>
     </ClCompile>
+    <ClCompile Include="1991.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
