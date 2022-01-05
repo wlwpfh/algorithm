@@ -320,6 +320,7 @@
     <ClCompile Include="simple369game.cpp" />
     <ClCompile Include="teamassignement.cpp" />
     <ClCompile Include="tmp.cpp" />
+    <ClCompile Include="trie.cpp" />
     <ClCompile Include="wordlength.cpp" />
     <ClCompile Include="ponketmon.cpp" />
     <ClCompile Include="prime.cpp" />
