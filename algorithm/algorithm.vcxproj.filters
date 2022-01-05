@@ -606,6 +606,9 @@
     <ClCompile Include="1072.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="arrays.cpp">
+      <Filter>소스 파일\cpbook</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
