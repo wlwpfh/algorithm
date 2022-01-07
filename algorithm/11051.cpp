@@ -1,23 +1,21 @@
 #include<stdio.h>
-#define MAX 1000
+#define MOD 10007
 using namespace std;
 
 int arr[1001][1001];
 
-int nCr(int n, int r) {
-	if (n == r)
-		return arr[n][r] = 1;
-	if (r == 1)
-		return arr[n][r] = n;
-	return arr[n][r] = (nCr(n - 1, r - 1)%10007 + nCr(n - 1, r)%10007) % 10007;
-
-}
-
 int main() {
 	int n, k;
 	scanf("%d %d", &n, &k);
+	arr[0][0] = 1;
+	for (int i = 1; i <= n; i++) {
+		arr[i][0] = 1;
+		for (int j = 1; j <= i; j++) {
+			arr[i][j] = (arr[i - 1][j - 1] + arr[i - 1][j]) % MOD;
+		}
+	}
 
-	printf("%d", nCr(n, k));
+	printf("%d", arr[n][k]);
 
 	return 0;
 }
