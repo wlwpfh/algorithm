@@ -281,6 +281,7 @@
     <ClCompile Include="budget.cpp" />
     <ClCompile Include="caesarcipher.cpp" />
     <ClCompile Include="collatzconjecture.cpp" />
+    <ClCompile Include="combination.cpp" />
     <ClCompile Include="countofdivandadd.cpp" />
     <ClCompile Include="cyclecheck.cpp" />
     <ClCompile Include="determinesqrt.cpp" />
