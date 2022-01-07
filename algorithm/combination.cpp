@@ -24,9 +24,12 @@ void backtracking(int start)
 
     for (int i = start; i <= N; i++)
     {
-        D[Top++] = i;
+        if (N - i + 1 < M - Top) break; 
+        //가지치기
+
+        D[Top++] = i; //값을 넣었음
         backtracking(i + 1);
-        Top--;
+        Top--; //다음 수가 들어가도록 비우는 것 
     }
 }
 
