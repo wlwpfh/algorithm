@@ -13,10 +13,11 @@ int main() {
 	scanf("%d", &N);
 	scanf("%d", &M);
 
-	memset(dp, INF, sizeof(dp));
+
 
 	for (i = 1; i <= N; i++) {
-		dp[i][i] = 0;
+		for (j = 1; j <= N; j++)
+			dp[i][j] = INF;
 	}
 
 	for (i = 0; i < M; i++) {
@@ -26,17 +27,17 @@ int main() {
 	}
 
 	for (i = 1; i <= N; i++) {
-		//출발지  
+		//중간 경유  
 		for (j = 1; j <= N; j++) {
-			//목적지  
+			//출발지   
 			for (k = 1; k <= N; k++) {
-				//중간 경유  
-				if (i == j || j == k)
+				//목적지   
+				if (j == k)
 					continue;
-				if (dp[i][j] == INF || dp[j][k] == INF)
+				if (dp[j][i] == INF || dp[i][k] == INF)
 					continue;
-				if (dp[i][k] > dp[i][j] + dp[j][k])
-					dp[i][k] = dp[i][j] + dp[j][k];
+				if (dp[j][k] > dp[j][i] + dp[i][k])
+					dp[j][k] = dp[j][i] + dp[i][k];
 			}
 		}
 	}
