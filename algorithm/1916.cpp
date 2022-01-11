@@ -57,8 +57,8 @@ int main() {
 		for (int i = 0; i < v[now.node].size(); i++) {
 			Data next = v[now.node].at(i);
 
-			if (dis[next.node] > dis[now.node] + dis[next.weight]) {
-				dis[next.node] = dis[now.node] + dis[next.weight];
+			if (dis[next.node] > dis[now.node] + next.weight) {
+				dis[next.node] = dis[now.node] + next.weight;
 				pq.push(Data(next.node, dis[next.node]));
 			}
 
@@ -69,4 +69,3 @@ int main() {
 
 	return 0;
 }
-
