@@ -20,10 +20,9 @@ int main() {
 	dp[2] = stair[1] + stair[2];
 
 	for (int i = 3; i <= n; i++) {
-		dp[i] = max(dp[i - 3] + stair[i - 1], dp[i - 2] + stair[i]);
-		//한번에 한칸만 가거나 두칸만 가거나
-		// dp[3]=dp[0]+stair[2] -> 두칸 가기
-		// dp[3]=dp[1]+stair[3] -> 한칸가고 3번째칸 가기 
+		dp[i] = max(dp[i - 3] + stair[i - 1], dp[i - 2]) + stair[i];
+		//dp[3] = dp[0] + stair[2] -> 두번째 칸에서 시작 + stair[3] => 두번째 칸 + 세번째 칸 
+		//dp[3] = dp[1] -> 첫번째 칸에서 시작 => 첫번째 칸 + 세번째 칸  
 	}
 
 	printf("%d", dp[n]);
