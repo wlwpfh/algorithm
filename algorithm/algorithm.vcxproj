@@ -188,6 +188,7 @@
     <ClCompile Include="1920.cpp" />
     <ClCompile Include="1922.cpp" />
     <ClCompile Include="1927.cpp" />
+    <ClCompile Include="1931.cpp" />
     <ClCompile Include="1932.cpp" />
     <ClCompile Include="1991.cpp" />
     <ClCompile Include="1week_lackmoney.cpp" />
