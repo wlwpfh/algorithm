@@ -12,28 +12,39 @@ struct Time {
 		end = b;
 	}
 	bool operator<(const Time a) const {
-		return end > a.end;
+		if (start == a.start)
+			return end > a.end;
+
+		return start > a.start;
 	}
+	//end가 항상 start보다 같거나 크니까  
 };
 
 vector<Time> v;
 
 int main() {
 
-	int i, N, a, b;
+	int i, N, a, b, count, rest = 0;
 	scanf("%d", &N);
 
 	for (i = 0; i < N; i++) {
 		scanf("%d %d", &a, &b);
 		v.push_back(Time(a, b));
 	}
-	// end가 커야하는지 start가 커야하는지 판단하기  
 
 	sort(v.begin(), v.end());
 
-	for (Time a : v) {
-		printf("%d %d \n", a.start, a.end);
+	count = 1;
+	rest = v[0].start;
+
+	for (i = 1; i < N; i++) {
+		if (rest >= v[i].end) {
+			rest = v[i].start;
+			count++;
+		}
 	}
+
+	printf("%d", count);
 
 	return 0;
 }
