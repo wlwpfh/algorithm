@@ -11,14 +11,13 @@ int main() {
 
 	int i, test_case;
 
-	bool right = false;
 	scanf("%d", &test_case);
 
 	for (i = 0; i < test_case; i++) {
 
 		int l_count = 0, r_count = 0;
-		bool right = false;
-
+		int r_pop = 0;
+		bool isAns = false;
 		getchar();
 		scanf("%s", &c);
 		//printf("%c",c[0]);
@@ -28,40 +27,47 @@ int main() {
 				l_count++;
 			else
 				r_count++;
+
+			s.push(c[j]);
 		}
 
-		//printf("char: %s \n",c);
-
-		//printf("l_count: %d, r_count:%d \n",l_count, r_count);
-
-		s.push(c[i]);
 
 
-		while (1) {
-			if (s.size() == 0 || (l_count == 0 && r_count != 0) || (l_count != 0 && r_count == 0))
-				break;
-			if (s.top() == ')') {
-				s.pop();
-				right = true;
-				r_count--;
+		if (l_count == r_count) {
+			//YES가 나올 가능성이 있음  
+			while (1) {
+				if (s.size() == 0) {
+					isAns = true;
+					break;
+				}
+				if (s.top() == '(' && r_pop == 0) {
+					//printf("(를 뽑는데 이전에 )가 없었음 \n");
+					break;
+				}
+				else if (s.top() == '(' && r_pop > 0) {
+					r_pop--;
+					s.pop();
+					//printf("(를 뽑는데 이전에 )가 있음 \n");
+				}
+				else if (s.top() == ')') {
+					r_pop++;
+					s.pop();
+				}
+				//printf(")를 뽑았고 r_pop:%d \n",r_pop); 
+
 			}
-			if (s.top() == '(' || right == true) {
-				s.pop();
-				l_count--;
-				right = false;
-			}
-
 
 		}
 
-		if (s.size() == 0 && right == false)
+		if (isAns == true)
 			printf("YES \n");
 		else
 			printf("NO \n");
 
 		while (!s.empty())
 			s.pop();
-		memset(c, 0, sizeof(c));
+
+		memset(c, 0, 50);
 	}
 
 	return 0;
