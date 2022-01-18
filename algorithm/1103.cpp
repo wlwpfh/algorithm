@@ -3,53 +3,53 @@
 using namespace std;
 
 int n, m;
-int dp[55][55] = { 0, }; //중복 계산을 막기 위해 계산 결과 저장  
-char map[55][55] = { 0, };
-bool visited[55][55];
-int max_level = 0;
+int dp[55][55] = { 0, }; //계산 중복을 막기 위해서  
+char map[55][55] = { 0, }; //지도를 저장하기 위해서  
+bool visited[55][55]; // 갔는지 안갔는지 체크하기 위해서  
+int max_level = -1;
 
-int dx[4] = { -1,1,0,0 };
-int dy[4] = { 0,0,-1,1 };
+int dx[4] = { 1,-1,0,0 };
+int dy[4] = { 0,0,1,-1 };
 
 void go(int x, int y, int level) {
 
-	dp[x][y] = level;
 	visited[x][y] = true;
 
-	for (int i = 0; i < 4; i++) {
-		int nx = x + dx[i] * (map[x][y]);
-		int ny = y + dy[i] * (map[x][y]);
+	dp[x][y] = level;
 
-		if (nx < 0 || nx >= n || ny < 0 || ny >= m || map[nx][ny] == 'H') {
-			if (level > max_level) max_level = level; //끝난 경우  
+	for (int i = 0; i < 4; i++) {
+		int next_x = x + dx[i] * (map[x][y] - '0'); //이렇게 하면 int가 된다 
+		int next_y = y + dy[i] * (map[x][y] - '0');
+
+		if (next_x < 0 || next_x >= n || next_y < 0 || next_y >= m || map[next_x][next_y] == 'H') {
+			if (max_level < level)
+				max_level = level;
 			return;
 		}
-
-
-		if (dp[nx][ny] > 0 || visited[nx][ny] == true) {
+		//범위에 벗어나는 경우  
+		if (visited[next_x][next_y]) {
 			max_level = -1;
 			return;
-		}
+		} //이미 왔던 경우  
 
 
-		dp[nx][ny] = level + 1;
-		visited[nx][ny] = true;
-		go(nx, ny, level + 1);
+		go(next_x, next_y, level + 1);
 
 	}
+
 }
+
 
 int main() {
 
 	scanf("%d %d", &n, &m);
 
 	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < m; j++) {
-			scanf("%1d", &map[i][j]);
-		}
+		scanf("%s", &map[i]);
+
 	}
 
-	go(0, 0, 0);
+	go(0, 0, 1);
 
 	printf("%d", max_level);
 	return 0;
