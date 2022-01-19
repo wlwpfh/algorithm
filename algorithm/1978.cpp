@@ -1,46 +1,33 @@
-#include<stdio.h>
-#include<cmath>
-#define MAX 1000
+#include <stdio.h>
 using namespace std;
 
-int arr[101];
-int prime[MAX + 1];
-int main() {
+bool isPrime(int n)
+{
+    if (n == 1)
+        return false;
+    else if (n == 2)
+        return true;
+    else {
+        for (int i = 2; i <= n / 2; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+}
 
-	int i, j, N, answer = 0, max;
+int main(void) {
+    int i, N, count = 0;
+    scanf("%d", &N);
+    int arr[N];
+    for (i = 0; i < N; i++)
+        scanf("%d", &arr[i]);
 
-	scanf("%d", &N);
-
-	for (int i = 0; i < N; i++) {
-		scanf("%d", &arr[i]);
-
-	}
-	max = arr[N - 1];
-
-	prime[0] = 0;
-	prime[1] = 0;
-
-	for (i = 2; i <= max; i++) {
-		prime[i] = i;
-	}
-
-	for (i = 2; i <= sqrt(max); i++) {
-		if (prime[i] == 0)
-			continue;
-
-		for (j = i * i; j <= N; j += i) {
-			prime[j] = 0;
-			printf("%d는 소수가 아님 \n", j);
-		}
-	}
-
-	for (i = 0; i < N; i++)
-		if (prime[arr[i]] != 0) {
-			printf("%d가 소수 \n", arr[i]);
-			answer++;
-		}
-
-	printf("%d", answer);
-
-	return 0;
+    for (i = 0; i < N; i++)
+    {
+        if (isPrime(arr[i]))
+            count++;
+    }
+    printf("%d", count);
+    return 0;
 }
