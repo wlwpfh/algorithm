@@ -5,7 +5,7 @@ using namespace std;
 
 int V, E;
 long long sum = 0;
-int friends[10001];
+int parent[10001];
 
 struct Node {
 	int n;
@@ -20,18 +20,19 @@ struct Node {
 	bool operator<(Node n) {
 		return value < n.value;
 	}
+	//오름차순 정리  
 };
 
 int Find(int v) {
-	if (v == friends[v])
+	if (v == parent[v])
 		return v;
 	else {
-		return friends[v] = Find(friends[v]);
+		return parent[v] = Find(parent[v]);
 	}
 }
 
 void Union(int a, int b) {
-	friends[Find(a)] = Find(b);
+	parent[Find(a)] = Find(b);
 }
 
 int main() {
@@ -41,7 +42,7 @@ int main() {
 	scanf("%d %d", &V, &E);
 
 	for (i = 1; i <= V; i++) {
-		friends[i] = i;
+		parent[i] = i;
 	}
 
 	vector<Node> n;
@@ -52,8 +53,9 @@ int main() {
 
 	sort(n.begin(), n.end());
 
+	int count = 0;
 
-	for (i = 0; i < V; i++) {
+	for (i = 0; i < E; i++) {
 		int n1 = Find(n[i].n);
 		int n2 = Find(n[i].m);
 
