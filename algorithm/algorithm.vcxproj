@@ -199,6 +199,7 @@
     <ClCompile Include="1week_lackmoney.cpp" />
     <ClCompile Include="2.c" />
     <ClCompile Include="20.c" />
+    <ClCompile Include="20040.cpp" />
     <ClCompile Include="2014.cpp" />
     <ClCompile Include="2016.cpp" />
     <ClCompile Include="2042.cpp" />
