@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<queue>
+#include<vector>
 #define MAX_N 200 
 using namespace std;
 
@@ -10,6 +11,20 @@ int N, K, S, X, Y;
 //N * N 행렬, 총 K개의 바이러스, S초 후의 X,Y에 있는 바이러스 종류 출력 
 int dx[4] = { -1,1,0,0 };
 int dy[4] = { 0,0,-1,1 };
+
+//각 위치에서 초마다 이동행 ㅑ함... 각 위치가 어디서 시작되는지 그 포인트를 줘야 하는거 아닌가? 
+//초마다 최근 위치를 주기?  
+
+struct Start {
+	int x;
+	int y;
+	Start(int a, int b) {
+		x = a;
+		y = b;
+	}
+};
+
+vector<Start> point;
 
 void bfs(int x, int y) {
 	q.push(make_pair(x, y));
@@ -46,23 +61,32 @@ int main() {
 	for (i = 0; i < N; i++) {
 		for (j = 0; j < N; j++)
 			scanf("%d", &map[i][j]);
+
+		if (map[i][j] != 0)
+			point.push_back(Start(i, j));
 	}
 
 	scanf("%d %d %d", &S, &X, &Y);
 
-	for (i = 0; i < N; i++) {
-		for (j = 0; j < N; j++) {
-			if (checked[i][j] == 0 && map[i][j] != 0) {
-				bfs(i, j);
-				count++;
-			}
-			if (count == S)
-				break;
+	//	for(i=0;i<N;i++){
+	//		for(j=0;j<N;j++){
+	//			if(checked[i][j]==0 && map[i][j]!=0){
+	//				bfs(i,j);
+	//				count++;
+	//			}
+	//			if(count==S)
+	//				break;			
+	//		
+	//		}
+	//		if(count==S)
+	//			break;
+	//				
+	//	}
+
+	for (count = 0; count <= S; count++) {
+		for (i = 0; i < point.length(); i++) {
 
 		}
-		if (count == S)
-			break;
-
 	}
 
 	for (i = 0; i < N; i++) {
