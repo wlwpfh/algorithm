@@ -297,6 +297,7 @@
     <ClCompile Include="8week_minrect.cpp" />
     <ClCompile Include="9.c" />
     <ClCompile Include="9012.cpp" />
+    <ClCompile Include="9372.cpp" />
     <ClCompile Include="9663.cpp" />
     <ClCompile Include="addeachnum.cpp" />
     <ClCompile Include="addminusplus.cpp" />
