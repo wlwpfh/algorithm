@@ -21,8 +21,8 @@ int main() {
 
 	for (start_i = 0; start_i <= N - 8; start_i++) {
 		for (start_j = 0; start_j <= M - 8; start_j++) {
-			for (i = start_i; i < N; i++) {
-				for (j = start_j; j < M; j++) {
+			for (i = start_i; i < start_i + 8; i++) {
+				for (j = start_j; j < start_j + 8; j++) {
 					if ((i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1)) {
 						//W가 잇어야 함. 
 						if (arr[i][j] != 'W')
@@ -35,18 +35,20 @@ int main() {
 				}
 
 			}
+			//printf("x:%d-%d, y:%d-%d, tmp:%d \n",)
 			c1 = c1 > tmp ? tmp : c1;
 			tmp = 0;
+
 		}
 	}
 
 	tmp = 0;
-	printf("W로 시작했을 때 다시 칠해야하는 것의 수는 %d \n", c1);
+	//	printf("W로 시작했을 때 다시 칠해야하는 것의 수는 %d \n",c1);
 
 	for (start_i = 0; start_i <= N - 8; start_i++) {
 		for (start_j = 0; start_j <= M - 8; start_j++) {
-			for (i = start_i; i < N; i++) {
-				for (j = start_j; j < M; j++) {
+			for (i = start_i; i < start_i + 8; i++) {
+				for (j = start_j; j < start_j + 8; j++) {
 					if ((i % 2 == 0 && j % 2 == 0) || (i % 2 == 1 && j % 2 == 1)) {
 						//W가 잇어야 함. 
 						if (arr[i][j] != 'B')
@@ -64,7 +66,7 @@ int main() {
 		}
 	}
 
-	printf("B로 시작했을 때 다시 칠해야하는 것의 수는 %d \n", c2);
+	//	printf("B로 시작했을 때 다시 칠해야하는 것의 수는 %d \n",c2);
 
 	answer = c1 < c2 ? c1 : c2;
 	printf("%d", answer);
