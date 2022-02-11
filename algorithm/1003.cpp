@@ -1,16 +1,34 @@
 #include<stdio.h>
-
+#include<memory.h>
 using namespace std;
 
 int fib[40] = { 0,1,0, };
-int count_0, count_1;
+int count_0[40], count_1[40];
 
-int fibonacci(int n) {
-	if (n == 0 || n == 1) {
+//fib배열에 다 저장했는데 그 각각의 0과 1을 저장해야 함...
+
+
+int f(int n) {
+	if (n == 0) {
+		count_0[n]++;
+		return 0;
+	}if (n == 1) {
+		count_1[n]++;
+		return 1;
+	}
+	if (fib[n] != 0) {
+		//printf("fib[%d]는 이미 저장된 수 \n",n);
+		count_0[n + 1] += count_0[n];
+		count_0[n + 2] += count_0[n];
+		count_1[n + 1] += count_1[n];
+		count_1[n + 2] += count_1[n];
+		printf("count_0[%d+2]:%d, count_1[%d+2]:%d \n ", n, count_0[n + 2] / 2, n, count_1[n + 2] / 2);
 		return fib[n];
 	}
-	else
-		return fib[n] = fibonacci(n - 1) + fibonacci(n - 2);
+	//printf("fib[%d]=f(%d)+f(%d) \n",n,n-1,n-2);
+
+
+	return fib[n] = f(n - 1) + f(n - 2);
 }
 
 int main() {
@@ -20,15 +38,13 @@ int main() {
 
 	for (i = 0; i < T; i++) {
 		scanf("%d", &tmp);
+		//memset(fib,0,sizeof(fib));
 
-		//tmp=fibonacci(tmp);
-		//printf("%d %d\n",count_0,count_1);		
-		//printf("tmp:%d \n",tmp);
-		//count_0=0, count_1=0;
-		if (tmp == 0)
-			printf("1 0\n");
-		else
-			printf("%d %d\n", fibonacci(tmp - 1), fibonacci(tmp));
+		//fib[1]=1;
+		//count_0=0, count_1=0,tmp_0=0, tmp_1=0;
+		f(tmp);
+
+		printf("%d %d\n", count_0[tmp] / 2, count_1[tmp] / 2);
 	}
 
 	return 0;
