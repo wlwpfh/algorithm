@@ -34,12 +34,11 @@ int main() {
 	for (int i = 1; i <= m; i++) {
 		scanf("%d %d", &a, &b);
 		Union(a, b);
+
 	}
 
-
-
 	for (int i = 2; i <= n; i++) {
-		if (coms[i] == 1)
+		if (Find(coms[i]) == Find(1))
 			answer++;
 	}
 	printf("%d", answer);
