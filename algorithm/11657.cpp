@@ -16,10 +16,11 @@ struct Line {
 	}
 };
 vector<Line> line;
-int dis[501];
+long long dis[501];
 int main() {
 	int N, M;
 	int i, j, a, b, c;
+	int start, end, cost;
 	scanf("%d %d", &N, &M);
 
 	for (i = 0; i < M; i++) {
@@ -35,22 +36,23 @@ int main() {
 
 	for (i = 1; i < N; i++) {
 		for (j = 0; j < line.size(); j++) {
-			a = line[j].start;
-			b = line[j].end;
-			c = line[j].value;
+			start = line[j].start;
+			end = line[j].end;
+			cost = line[j].value;
 
-			if (dis[a] != INF && dis[a] + c < dis[b]) {
-				dis[b] = dis[a] + c;
+			if (dis[start] != INF && dis[start] + cost < dis[end]) {
+				dis[end] = dis[start] + cost;
 			}
 		}
 	}
 
 	for (i = 0; i < line.size(); i++) {
-		a = line[i].start;
-		b = line[i].end;
-		c = line[i].value;
+		start = line[i].start;
+		end = line[i].end;
+		cost = line[i].value;
 
-		if (dis[a] != INF && dis[a] + c < dis[b]) {
+		if (dis[start] != INF && dis[start] + cost < dis[end]) {
+			//더 갱신 된다는 것은 음의 사이클이 있다는 뜻이니까  
 			printf("-1");
 			return 0;
 		}
