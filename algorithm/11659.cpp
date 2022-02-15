@@ -4,7 +4,7 @@
 using namespace std;
 
 int N, M;
-long long sum[MAX_N];
+long long sum[MAX_N + 1];
 
 int main() {
 	int a, b, i, tmp, j, k;
@@ -20,7 +20,7 @@ int main() {
 	for (i = 0; i < M; i++) {
 		scanf("%d %d", &a, &b);
 
-		printf("%lld\n,", sum[b] - sum[a - 1]);
+		printf("%lld\n", sum[b] - sum[a - 1]);
 
 	}
 
