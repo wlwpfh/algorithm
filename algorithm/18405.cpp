@@ -1,105 +1,99 @@
 #include<stdio.h>
 #include<queue>
 #include<vector>
-#define MAX_N 200 
+#include<algorithm>
 using namespace std;
 
-queue<pair<int, int> > q;
-int map[MAX_N + 1][MAX_N + 1] = { 0, };
-int visited[MAX_N + 1][MAX_N + 1] = { 0, };
 int N, K, S, X, Y;
-//N * N 행렬, 총 K개의 바이러스, S초 후의 X,Y에 있는 바이러스 종류 출력 
+int map[201][201];
 int dx[4] = { -1,1,0,0 };
 int dy[4] = { 0,0,-1,1 };
-
-//각 위치에서 초마다 이동행 ㅑ함... 각 위치가 어디서 시작되는지 그 포인트를 줘야 하는거 아닌가? 
-//초마다 최근 위치를 주기?  
-
-struct Start {
-	int x;
-	int y;
-	int virus;
-	Start(int a, int b, int c) {
+struct Virus {
+	int x; int y; int number; int second;
+	Virus(int a, int b, int c, int d) {
 		x = a;
 		y = b;
-		virus = c;
+		number = c;
+		second = d;
+	}
+	bool operator<(const Virus v)const {
+		return number < v.number;
 	}
 };
+queue<Virus> q;
+vector<Virus> vec;
+void Infection() {
+	while (!q.empty()) {
 
-vector<Start> point;
+		Virus v = q.front();
+		int x = v.x;
+		int y = v.y;
+		int virus = v.number;
+		int second = v.second;
+		q.pop();
 
-void bfs(int a, int b, int time) {
-	q.push(make_pair(a, b)); //위치를 받음  
-	//checked[a][b]=1;
-	//visited[a][b]=time;
-	int j;
-	int virus = map[a][b];
-	int x = q.front().first;
-	int y = q.front().second;
-	q.pop();
-	printf("현재 바이러스의 위치: (%d, %d) \n", x, y);
-	for (int i = 0; i < 4; i++) {
-		int nx = x + dx[i];
-		int ny = y + dy[i];
-		//printf("nx: %d, ny: %d \n",nx,ny);
-		if (nx < 0 || nx >= N || ny < 0 || ny >= N) //범위를 벗어난 경우 
-			continue;
-		if (map[nx][ny] == 0) {
-			//checked[nx][ny]=1;
-			map[nx][ny] = map[x][y];
-			visited[nx][ny] = time + 1;
-			//printf("(%d, %d)에도 바이러스(%d)전염 \n",nx,ny,virus); 
+		if (S == second)
+			break;
+
+		//printf("virus :%d\n",virus);
+
+		for (int i = 0; i < 4; i++) {
+
+			int nx = x + dx[i];
+			int ny = y + dy[i];
+
+			if (nx<1 || nx>N || ny<1 || ny>N) //범위를 벗어난 경우 
+				continue;
+			if (map[nx][ny] == 0) {
+
+				map[nx][ny] = virus;
+				q.push(Virus(nx, ny, virus, second + 1));
+			}
+
+
 		}
-
 	}
 
-	for (int i = 0; i < N; i++) {
-		for (j = 0; j < N; j++) {
-			printf("%d ", map[i][j]);
-		}
-		printf("\n");
-	}
-
-	return;
-	//return virus;
 }
 
 int main() {
-	int i, j, count = 0;
+	int i, j;
 	scanf("%d %d", &N, &K);
 
-	for (i = 0; i < N; i++) {
-		for (j = 0; j < N; j++) {
+	for (i = 1; i <= N; i++) {
+		for (j = 1; j <= N; j++) {
 			scanf("%d", &map[i][j]);
 
-			if (map[i][j] != 0)
-				visited[i][j] = 1;
+			if (map[i][j] != 0) {
+				//q.push(Virus(i,j,map[i][j],0));
+				vec.push_back(Virus(i, j, map[i][j], 0));
+			}
 		}
-
 	}
-
 	scanf("%d %d %d", &S, &X, &Y);
 
 
-	for (int k = 1; k <= S; k++) {
-		//printf("%d초 |||||||| \n",k+1);
-		for (i = 0; i < N; i++) {
-			for (j = 0; j < N; j++) {
+	sort(vec.begin(), vec.end());
 
-				if (map[i][j] != 0 && visited[i][j] == k) {
-					//printf("%d번 바이러스 %d로 감염 시작 !!!!\n",count+1,map[i][j]);
-					bfs(i, j, k);
-
-				}
-
-			}
-
-		}
+	for (i = 0; i < vec.size(); i++) {
+		q.push(vec[i]);
+		//printf("(%d, %d), Virus:%d \n",vec[i].x, vec[i].y,vec[i].number);
 	}
 
+	//	while(!q.empty()){
+	//		Virus v=q.top();
+	//		printf("(%d, %d), Virus:%d \n",v.x, v.y,v.number);
+	//		q.pop();
+	//	}
 
-	printf("%d", map[X - 1][Y - 1]);
+	Infection();
 
+	for (i = 1; i <= N; i++) {
+		for (j = 1; j <= N; j++)
+			printf("%d ", map[i][j]);
+		printf("\n");
+	}
 
+	printf("%d", map[X][Y]);
 	return 0;
 }
