@@ -45,8 +45,10 @@ int main() {
 	}
 
 
-
-	printf("\n1. %.0f \n", round((double)sum / (double)n));
+	if (round((double)sum / (double)n) == -0)
+		printf("0 \n");
+	else
+		printf("\n1. %.0f \n", round((double)sum / (double)n));
 	printf("2. %d \n", arr[n / 2]);
 	printf("3. %d \n", freq_num);
 	printf("4. %d \n", arr[n - 1] - arr[0]);
