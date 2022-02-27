@@ -1,32 +1,37 @@
 #include<stdio.h>
 #include<queue>
+#include<vector>
 using namespace std;
 
+priority_queue <int, vector<int>, greater<int> > pq;
+int tmp;
+int checked[542]; //중복으로 들어가는 것을 방지하기 위해서  
 int main() {
+	int i, K, N, tmp;
 
-	int n, k, tmp, count = 0;
-	priority_queue<int, vector<int>, greater<int> > pq;
+	scanf("%d %d", &K, &N);
 
-	scanf("%d %d", &n, &k);
-
-	vector<int> mul;
-
-	for (int i = 0; i < n; i++) {
+	for (i = 0; i < K; i++) {
 		scanf("%d", &tmp);
 		pq.push(tmp);
-		mul.push_back(tmp);
+		checked[tmp] = 1;
 	}
 
-	while (count != k) {
-		// pop하고
-		int min = pq.top();
+	while (pq.size() != N) {
+		//몇개를 곱하든 됨.. 
+		// 자기 자신을 곱해도 된다! 
+		int top_1 = pq.top();
 		pq.pop();
+		int top_2 = pq.top();
 
-		//다른 수를 꺼내서 곱하기 -> push한 다음에 vector에 넣기
-		// -> index가 k인 것을 뽑기  
+		tmp = top_1 * top_2;
 
+		if (checked[tmp] == 0) {
+			pq.push(tmp);
+			checked[tmp] = 1;
+		}
+		pq.push(top_1);
 	}
-
 
 
 
