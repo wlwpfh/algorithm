@@ -1,38 +1,51 @@
 #include<stdio.h>
 #include<queue>
 #include<vector>
+#include<map>
+#include<algorithm>
 using namespace std;
 
-priority_queue <int, vector<int>, greater<int> > pq;
-int tmp;
-int checked[542]; //중복으로 들어가는 것을 방지하기 위해서  
+priority_queue <long long, vector<long long>, greater<long long> > pq;
+vector<long long> v;
+long long max_value;
+map<long long, bool> checked; //중복으로 들어가는 것을 방지하기 위해서  
 int main() {
-	int i, K, N, tmp;
+	int i, K, N;
+	long long tmp;
 
 	scanf("%d %d", &K, &N);
 
 	for (i = 0; i < K; i++) {
 		scanf("%d", &tmp);
-		pq.push(tmp);
-		checked[tmp] = 1;
+		v.push_back(tmp);
 	}
 
-	while (pq.size() != N) {
-		//몇개를 곱하든 됨.. 
-		// 자기 자신을 곱해도 된다! 
-		int top_1 = pq.top();
+	pq.push(1);
+	checked[1] = true;
+
+	while (N--) {
+		long long mul = pq.top();
 		pq.pop();
-		int top_2 = pq.top();
 
-		tmp = top_1 * top_2;
+		for (i = 0; i < K; i++) {
+			long long output = mul * v[i];
 
-		if (checked[tmp] == 0) {
-			pq.push(tmp);
-			checked[tmp] = 1;
+			if (pq.size() > N && output > max_value)
+				continue;
+
+			if (checked[output] == true)
+				continue;
+			else {
+				checked[output] = true;
+				pq.push(output);
+				max_value = max(max_value, output);
+			}
 		}
-		pq.push(top_1);
+
+
 	}
 
+	printf("%lld", pq.top());
 
 
 	return 0;
