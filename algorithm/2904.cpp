@@ -1,76 +1,85 @@
 #include<stdio.h>
 #include<vector>
-#include<algorithm>
+#include<cmath>
 #define MAX_NUM 1000000
 using namespace std;
 
 int N;
 int arr[100];// 들어온 입력 값 저장  
-bool prime_check[MAX_NUM]; // 소수 판별을 위해 
+int prime_check[MAX_NUM]; // 소수 판별을 위해
 vector<int> primes; //소수만 들어간 백터  
-vector<vector<int> > prime_counts(100, vector<int>(primes.size(), 0)); // 해당 arr의 소수와 그에 해당하는 지수 저장. 
+ // 해당 arr의 소수와 그에 해당하는 지수 저장. 
+
+int total_prime[MAX_NUM]; //전체 해당 소수들 넣기  
 
 void makePrime() {
 	int i, j;
 
+	for (i = 2; i <= MAX_NUM; i++)
+		prime_check[i] = i;
 
-	for (i = 2; i <= MAX_NUM; i++) {
-		if (prime_check[i] == true)
+	for (i = 2; i <= sqrt(MAX_NUM); i++) {
+		if (prime_check[i] == 0)
 			continue;
+
 		for (j = i * i; j <= MAX_NUM; j += i)
-			prime_check[j] = true;
+			prime_check[j] = 0;
 	}
 
-	for (i = 2; i <= MAX_NUM; i++)
-		if (prime_check[i] == false)
+	for (i = 2; i <= MAX_NUM; i++) {
+		if (prime_check[i] != 0)
 			primes.push_back(i);
-	printf("primes.size():%d \n", primes.size());
+	}
+
 }
 
 int main() {
-	int i, j, max_value = 0, count = 0;
+	makePrime(); //소수를 판별하여 primes에 소수만 넣음. 
 
-
+	int i, j, count = 0, max_value = 1, num;
 
 	scanf("%d", &N);
 
+	vector<vector<int> > prime_counts(N, vector<int>(primes.size(), 0));
 
 	for (i = 0; i < N; i++) {
-		scanf("%d", &arr[i]); //값을 저장  
-	}
-	makePrime(); //소수를 판별하여 primes에 소수만 넣음. 
+		scanf("%d", &num); //값을 저장  
 
-	printf("primes size:%d \n", primes.size());
 
-	for (i = 0; i < N; i++) {
 		for (j = 0; j < primes.size(); j++) {
-
-			while (arr[i] % primes[j] == 0) {
-				prime_counts[i][j]++;
-				arr[i] /= primes[j];
-
-				printf("arr[i]:%d, primes_count[%d][%d]=%d \n", arr[i], i, j, prime_counts[i][j]);
-
-				if (arr[i] == 1)
-					break;
-
-			}
-			if (arr[i] == 1)
+			if (num == 1)
 				break;
+			while (num % primes[j] == 0) {
+				//입력값을 소수로 나눌 수 있다면 나누기  
+				num /= primes[j];
+				prime_counts[i][primes[j]]++;
+				total_prime[primes[j]]++;
+			}
+
+
 		}
 	}
 
 
 
-	for (i = 0; i < MAX_NUM; i++) {
-		//if(primes_count[i]!=0)
-		//	printf("소수 %d : %d개 \n",i,primes_count[i]);
-	}
+	for (i = 0; i < primes.size(); i++) {
+		int number = total_prime[primes[i]] / N;
 
+		if (number != 0) {
+			for (j = 0; j < N; j++) {
+				if (prime_counts[j][primes[i]] < number) {
+
+					count += (number - prime_counts[j][primes[i]]);
+
+				}
+
+			}
+		}
+
+		max_value *= pow(primes[i], number);
+	}
 
 	printf("%d %d", max_value, count);
 
 	return 0;
 }
-
-//소인수분해하기, 그걸 저장하기,  
