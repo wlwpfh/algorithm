@@ -1,24 +1,48 @@
 #include<stdio.h>
-#include<cstring> 
+#include<cstring>
+#define MOD 1000007 
 using namespace std;
 
 int N, M, C;
 int map[51][51];
 int dp[51][51][51][51];
 // 	  x  y    l   k
-// (x,y)에서 (n,m)까지 갈 때 l번 오락실 경우, 오락실을 k번 지나가는 경우  
+// (x,y)일 때 l번 오락실 경우, 오락실을 k번 지나가는 경우  
 
 int dfs(int x, int y, int prev, int count) {
 	//현재 위치  , 마지막으로 들린 오락실 -prev, 총 들린 오락실 count
 
 	if (x<0 || y<0 || x>N || y>M)
 		return 0;
+	if (x == N && y == M) {
+		if (count == 0 && map[x][y] == 0) // 길, 최종 목적지 도착   
+			return 1;
+		if (count == 1 && map[x][y] > prev) // 오락실, 최종 목적지 도착  
+			return 1;
+	} //return 
 
-	int now = dp[x][y][count][prev];
+
+	int& now = dp[x][y][count][prev];
 
 	if (now != -1) //이미 왔다 간 경우  
 		return now;
 
+	//현재 왔다는 표시로 0으로 표시
+	now = 0;
+
+	//이동시키기 
+	// 현재 x, y가 오락실인 경우
+	if (map[x][y] == 0) { //길 인 경우  
+		now = (dfs(x + 1, y, prev, count) + (dfs(x, y + 1, prev, count))) % MOD;
+	}
+	else if (map[x][y] > prev) {
+		//더 콘 오락실에 온 경우  
+		now = (dfs(x + 1, y, map[x][y], count - 1) + dfs(x, y + 1, map[x][y], count - 1)) % MOD;
+	}
+	// 아닌 경우, 학원인 경우
+
+
+	return now;
 
 
 }
