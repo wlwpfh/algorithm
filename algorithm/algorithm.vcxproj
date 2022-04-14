@@ -236,6 +236,7 @@
     <ClCompile Include="2448.cpp" />
     <ClCompile Include="24hour.cpp" />
     <ClCompile Include="25.c" />
+    <ClCompile Include="2512.cpp" />
     <ClCompile Include="2579.cpp" />
     <ClCompile Include="26.c" />
     <ClCompile Include="2606.cpp" />
