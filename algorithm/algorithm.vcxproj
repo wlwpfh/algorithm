@@ -264,6 +264,7 @@
     <ClCompile Include="31.c" />
     <ClCompile Include="3114.cpp" />
     <ClCompile Include="32.c" />
+    <ClCompile Include="3273.cpp" />
     <ClCompile Include="33.c" />
     <ClCompile Include="34.c" />
     <ClCompile Include="3425.cpp" />
