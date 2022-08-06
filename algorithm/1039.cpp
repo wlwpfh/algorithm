@@ -1,55 +1,50 @@
-// 큐 안에 같은 수가 없도록  
-//bfs
 #include<stdio.h>
 #include<queue>
-#include<set>
-#include<string>
+
 using namespace std;
 
-int k;
-int n;
-queue<string> q;
-set<string> sets;
-char t;
+int K, N;
 
-void bfs(int count) {
-	while (count != k) {
-		string s = q.front();
-		q.pop();
-		//string s=to_string(number);
+struct Num {
+	int number;
+	int order;
 
-		for (int j = 0; j < s.length(); j++) {
-			for (int i = 0; i < j; i++) {
-				if ((i == 0 && s[j] == '0') || (j == 0 && s[i] == '0'))
-					continue;
-
-				t = s[i];
-				s[i] = s[j];
-				s[j] = t;
-				//number=stoi(s);
-				if (sets.count(s) != 0) {
-					continue;
-				}
-
-				count++;
-				q.push(s);
-			}
-		}
+	Num(int a, int b) {
+		number = a;
+		order = b;
 	}
-}
 
+	bool operator<(const Num n)const {
+		return number < n.number;
+	}
+};
+priority_queue<Num> q;
+//해당 숫자, 입력될 때의 index 
 
 int main() {
-	scanf("%d %d", &n, &k);
-	string s = to_string(n);
-	q.push(s);
 
-	bfs(0);
-	string max = 0;
+	int i = 0, div, tmp;
+
+	scanf("%d %d", &N, &K);
+
+	printf("잘입력됨");
+
+	tmp = N;
+
+	while (tmp >= 10) {
+
+		int div = tmp % 10;
+		tmp /= 10;
+		q.push(Num(div, i));
+
+		i++;
+	}
+	q.push(Num(tmp, i));
 
 	while (!q.empty()) {
-		if (max < q.front())
-			max = q.front();
+		//pair<int,int>p=q.top();
+		Num p = q.top();
+		printf("숫자:%d, 순서: %d\n", p.number, p.order);
 		q.pop();
 	}
 
