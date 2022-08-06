@@ -7,7 +7,7 @@ int M, N, count;
 int tomato[1000][1000];
 int dx[4] = { -1,1,0,0 };
 int dy[4] = { 0,0,-1,1 };
-int sum;
+bool moving = false;
 
 struct Tomato {
 	int x; int y;
@@ -25,32 +25,25 @@ void Cook() {
 		Tomato t = q.front();
 		q.pop();
 		count++;
-		sum = 0;
 		for (int i = 0; i < 4; i++) {
+			moving = false;
 			int new_x = t.x + dx[i];
 			int new_y = t.y + dy[i];
-
-
 
 			if (new_y < 0 || new_y >= M || new_x < 0 || new_x >= N)
 				continue;
 			if (tomato[new_x][new_y] == 0) {
 				q.push(Tomato(new_x, new_y));
-				tomato[new_x][new_y] = 1;
-				sum++;
+				tomato[new_x][new_y] = tomato[t.x][t.y] + 1;
 			}
-
 		}
-		if (sum == 0)
-			count--;
-		printf("count:%d \n", count);
 
 	}
 }
 
 int main() {
 
-	int i, j;
+	int i, j, cooked = 0;
 
 	scanf("%d %d", &M, &N);
 
@@ -60,21 +53,32 @@ int main() {
 			if (tomato[i][j] == 1) {
 				q.push(Tomato(i, j));
 			}
+			if (tomato[i][j] == 0) {
+				cooked++;
+			}
 		}
 	}
-
+	if (cooked == 0) {
+		printf("0");
+		return 0;
+	}
 
 	Cook();
 
-	printf("\n");
+	int count = 0;
 
-
-	for (i = 0; i < N; i++)
-		for (j = 0; j < M; j++)
+	for (i = 0; i < N; i++) {
+		for (j = 0; j < M; j++) {
 			if (tomato[i][j] == 0) {
-				printf("0");
+				printf("-1");
 				return 0;
 			}
+			if (count < tomato[i][j])
+				count = tomato[i][j];
+		}
+	}
+
+	printf("%d", count - 1);
 
 	return 0;
 }
