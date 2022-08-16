@@ -390,6 +390,7 @@
     <ClCompile Include="minandmax.cpp" />
     <ClCompile Include="morespicy.cpp" />
     <ClCompile Include="mutualtest.cpp" />
+    <ClCompile Include="network.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="notforend.cpp" />
     <ClCompile Include="numsdes.cpp" />
