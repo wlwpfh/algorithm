@@ -372,6 +372,7 @@
     <ClCompile Include="dividearray.cpp" />
     <ClCompile Include="findkim.cpp" />
     <ClCompile Include="findrem1.cpp" />
+    <ClCompile Include="gamemap.cpp" />
     <ClCompile Include="gcdlcm.cpp" />
     <ClCompile Include="gugudan2.cpp" />
     <ClCompile Include="hashad.cpp" />
