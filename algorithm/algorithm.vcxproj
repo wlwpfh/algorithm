@@ -424,6 +424,7 @@
     <ClCompile Include="sumofmatrix.cpp" />
     <ClCompile Include="targetnumber.cpp" />
     <ClCompile Include="ternaryfilp.cpp" />
+    <ClCompile Include="wordtransition.cpp" />
     <ClCompile Include="xgapnnum.cpp" />
     <ClCompile Include="zigzagnum.cpp" />
   </ItemGroup>
