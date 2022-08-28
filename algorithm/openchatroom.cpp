@@ -2,7 +2,8 @@
 #include <vector>
 #include<iostream>
 #include<sstream>
-
+#include<queue>
+#include<map>
 
 using namespace std;
 pair<string, string> split(string s) {
@@ -24,41 +25,28 @@ pair<string, string> split(string s) {
 }
 vector<string> solution(vector<string> record) {
     vector<string> answer;
-    vector<pair <string, string>> in_out; //나오고 들어온 uid를 넣기
-    vector<pair <string, string>> info{};
     pair<string, string> tmp;
-    int i, j; istringstream ss; string a, b;
+    map<string, string> info; // uid / 이름
+
+    int i, j;
+
     for (i = 0; i < record.size(); i++) {
         tmp = split(record[i]);
-        if (record[i].find("Enter") != -1) {
-            info.push_back(pair<string, string>(tmp.first, tmp.second));
-            in_out.push_back(pair<string, string>("in", tmp.first));
-        }
-        else if (record[i].find("Change") != -1) {
-            for (j = 0; j < info.size(); j++) {
-                if (info[j].first == tmp.first) {
-                    info[j].second = tmp.second;
-                }
-            }
-        }
-        else { // leave
-            in_out.push_back(pair<string, string>("out", tmp.first));
-        }
+
+        if (tmp.second != "")
+            info[tmp.first] = tmp.second;
+
     }
-    for (i = 0; i < in_out.size(); i++) {
-        if (in_out[i].first == "in") {
-            for (j = 0; j < info.size(); i++) {
-                if (in_out[i].second == info[j].first) {
-                    a = info[j].second;
-                    break;
-                }
-            }
-            printf("%s님이 들어왔습니다. \n", a.c_str());
-        }
-        else { //"out"
-           //answer.push_back(+)
-        }
+
+    for (i = 0; i < record.size(); i++) {
+        tmp = split(record[i]);
+        if (record[i].find("Enter") != -1)
+            answer.push_back(info[tmp.first] + "님이 들어왔습니다.");
+        else if (record[i].find("Leave") != -1)
+            answer.push_back(info[tmp.first] + "님이 나갔습니다.");
     }
+
+
 
     return answer;
 }
