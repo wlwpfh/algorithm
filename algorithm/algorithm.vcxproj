@@ -404,6 +404,7 @@
     <ClCompile Include="numsum.cpp" />
     <ClCompile Include="oddeven.cpp" />
     <ClCompile Include="openchatroom.cpp" />
+    <ClCompile Include="overtimeindex.cpp" />
     <ClCompile Include="pandycount.cpp" />
     <ClCompile Include="permutation.cpp" />
     <ClCompile Include="printer.cpp" />
