@@ -399,6 +399,7 @@
     <ClCompile Include="network.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="notforend.cpp" />
+    <ClCompile Include="nqueens.cpp" />
     <ClCompile Include="numsdes.cpp" />
     <ClCompile Include="numstringeng.cpp" />
     <ClCompile Include="numsum.cpp" />
