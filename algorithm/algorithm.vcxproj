@@ -363,6 +363,7 @@
     <ClCompile Include="bringmiddleletter.cpp" />
     <ClCompile Include="budget.cpp" />
     <ClCompile Include="caesarcipher.cpp" />
+    <ClCompile Include="carpet.cpp" />
     <ClCompile Include="collatzconjecture.cpp" />
     <ClCompile Include="combination.cpp" />
     <ClCompile Include="countofdivandadd.cpp" />
