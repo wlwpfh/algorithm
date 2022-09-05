@@ -410,6 +410,7 @@
     <ClCompile Include="overtimeindex.cpp" />
     <ClCompile Include="pandycount.cpp" />
     <ClCompile Include="permutation.cpp" />
+    <ClCompile Include="presskeypad.cpp" />
     <ClCompile Include="printer.cpp" />
     <ClCompile Include="projectbillion.cpp" />
     <ClCompile Include="rightbracket.cpp" />
