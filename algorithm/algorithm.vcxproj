@@ -417,6 +417,7 @@
     <ClCompile Include="printer.cpp" />
     <ClCompile Include="projectbillion.cpp" />
     <ClCompile Include="rightbracket.cpp" />
+    <ClCompile Include="rotatebracket.cpp" />
     <ClCompile Include="simple369game.cpp" />
     <ClCompile Include="teamassignement.cpp" />
     <ClCompile Include="tmp.cpp" />
