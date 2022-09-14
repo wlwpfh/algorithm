@@ -921,6 +921,9 @@
     <ClCompile Include="rotatebracket.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="repeatbinary.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
