@@ -376,6 +376,7 @@
     <ClCompile Include="dijkstra_source.cpp" />
     <ClCompile Include="fake.cpp" />
     <ClCompile Include="fibonacci.cpp" />
+    <ClCompile Include="findmin.cpp" />
     <ClCompile Include="findprime.cpp" />
     <ClCompile Include="dividearray.cpp" />
     <ClCompile Include="findkim.cpp" />
