@@ -375,6 +375,7 @@
     <ClCompile Include="developfunc.cpp" />
     <ClCompile Include="dfs_cc.cpp" />
     <ClCompile Include="dijkstra_source.cpp" />
+    <ClCompile Include="expressionnumber.cpp" />
     <ClCompile Include="fake.cpp" />
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="findmin.cpp" />
