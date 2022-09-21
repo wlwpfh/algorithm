@@ -1,36 +1,49 @@
 #include <string>
 #include <vector>
-#include <unordered_map>
+#include <map>
+#include <algorithm>
 using namespace std;
 
+bool cmp(const pair<string, int>& a, const pair<string, int>& b) {
+    return a.second > b.second;
+}
+
+bool cmp2(const pair<int, int>& a, const pair<int, int>& b) {
+    if (a.second == b.second)
+        return a.first < b.first;
+    return a.second > b.second;
+}
+
 vector<int> solution(vector<string> genres, vector<int> plays) {
-    vector<int> answer(genres.size());
-    unordered_map<string, int> genCom;
-    unordered_map<int, int> playCom;
-    int i = 0;
-    for (string s : genres) {
-
-        genCom[s] += plays[i];
-        i++;
+    vector<int> answer;
+    map<string, vector<pair<int, int>>> musicTotal;
+    //장르별 두 노래만 
+    map<string, int> genresTotal;
+    for (int i = 0; i < genres.size(); i++) {
+        musicTotal[genres[i]].push_back(make_pair(i, plays[i]));
+        genresTotal[genres[i]] += plays[i];
     }
-    for (pair<string, int> p : genCom) {
-        printf("gen: %s , plays: %d \n", p.first.c_str(), p.second);
-    } //제대로 입력 완
+    vector<pair<string, int>> v(genresTotal.begin(), genresTotal.end());
+    sort(v.begin(), v.end(), cmp);
 
-    i = 0;
-    for (string s : genres) {
-        for (pair<string, int> p : genCom) {
-            if (s == p.first)
-                playCom[i] = plays[i];
+    for (int i = 0; i < v.size(); i++) {
+        printf("%s -  %d \n", v[i].first.c_str(), v[i].second);
+    }
+
+    for (auto& a : musicTotal) {
+        sort(a.second.begin(), a.second.end(), cmp2);
+    }
+
+    for (int i = 0; i < v.size(); i++) {
+        int count = 0;
+
+        for (auto i : musicTotal[v[i].first]) {
+            if (count == 2)
+                break;
+            answer.push_back(i.first);
+            count++;
         }
-        i++;
-
-
     }
-    for (pair<int, int> p : playCom) {
-        printf("고유번호: %d , 횟수 : %d \n", p.first, p.second);
-    } //고유번호 잘 들어가기 완~
-
 
     return answer;
 }
