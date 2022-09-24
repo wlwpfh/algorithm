@@ -1,59 +1,72 @@
 #include <string>
-#include <iostream>
+#include <stdio.h>
+#include <algorithm>
 
 using namespace std;
 
 string solution(string new_id) {
     int i, end_count = 0;
-    string answer = "";
-    for (i = 0; i < new_id.length(); i++) {
-        if (new_id[i] >= 65 && new_id[i] <= 90) //1
-            new_id[i] += 32;
+    string answer = new_id;
+
+    for (i = 0; i < answer.length(); i++) {
+        if (answer[i] >= 65 && answer[i] <= 90) //1
+            answer[i] += 32;
     }
-    cout << new_id << endl;
-    for (i = 0; i < new_id.length(); i++) {
-        if ((new_id[i] >= 65 && new_id[i] <= 90) || (new_id[i] >= 0 && new_id[i] <= 9)
-            || new_id[i] == 45 || new_id[i] == 95 || new_id[i] == 44) {
-            //answer[i].append(new_id[i]);
+    printf("1. 소문자로 치환 결과: %s \n", answer.c_str());
+
+    for (i = 0; i < answer.length(); i++) { //2
+        if ((answer[i] >= 'a' && answer[i] <= 'z') || (answer[i] >= '0' && answer[i] <= '9')
+            || answer[i] == '-' || answer[i] == '_' || answer[i] == '.') {
+            continue;
         }
         else {
-            new_id.erase(remove(new_id.begin(), new_id.end(), new_id[i]),
-                new_id.end());
-            //answer[i].append(new_id[i]);
+            answer.erase(i, 1);
+            i--;
         }
     }
-    cout << new_id << endl;
+    printf("2. 다른 문자 제거 결과: %s \n", answer.c_str());
 
 
 
-    for (i = 1; i < new_id.length(); i++) { //3
-        if (new_id[i] == 44 && new_id[i - 1] == 44) {
-            new_id.erase(i);
+    for (i = 1; i < answer.length(); i++) { //3
+        if (answer[i] == '.' && answer[i - 1] == '.') {
+            answer.erase(i, 1);
+            i--;
         }
     }
+    printf("3. 다른 문자 제거 결과: %s \n", answer.c_str());
 
-    if (new_id[0] == 44) { //4
-        new_id.erase(0);
+    if (answer[0] == '.') { //4
+        answer.erase(0, 1);
     }
-    else if (new_id[new_id.length() - 1] == 44) {
-        new_id.erase(new_id.length() - 1);
+    else if (answer[answer.length() - 1] == 44) {
+        answer.erase(answer.length() - 1);
     }
 
-    cout << new_id << endl;
+
+    printf("4. 다른 문자 제거 결과: %s \n", answer.c_str());
 
 
+    if (answer.length() == 0)
+        answer += "a";
 
+    printf("5. 다른 문자 제거 결과: %s \n", answer.c_str());
 
+    if (answer.length() >= 16) {
+        answer.erase(15, answer.length());
+    }
+    printf("6-1. 다른 문자 제거 결과: %s \n", answer.c_str());
 
+    if (answer[answer.length() - 1] == '.')
+        answer.erase(answer.length() - 1, 1);
+
+    printf("6-2. 다른 문자 제거 결과: %s \n", answer.c_str());
+
+    if (answer.length() <= 2) {
+        while (answer.length() != 3) {
+            answer += answer[answer.length() - 1];
+        }
+    }
 
     return answer;
-}
-
-template <class ForwardIt, class UnaryPredicate>
-ForwardIt remove_if(ForwardIt first, ForwardIt last, UnaryPredicate p) {
-    first = std::find_if(first, last, p);
-    if (first != last)
-        for (ForwardIt i = first; ++i != last;)
-            if (!p(*i)) *first++ = std::move(*i);
-    return first;
 }
