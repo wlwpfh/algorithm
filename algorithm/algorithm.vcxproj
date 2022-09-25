@@ -366,6 +366,7 @@
     <ClCompile Include="bfs.cpp" />
     <ClCompile Include="bringmiddleletter.cpp" />
     <ClCompile Include="budget.cpp" />
+    <ClCompile Include="cache.cpp" />
     <ClCompile Include="caesarcipher.cpp" />
     <ClCompile Include="carpet.cpp" />
     <ClCompile Include="collatzconjecture.cpp" />
