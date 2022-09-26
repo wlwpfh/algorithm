@@ -409,6 +409,7 @@
     <ClCompile Include="network.cpp" />
     <ClCompile Include="newid.cpp" />
     <ClCompile Include="newsclustering.cpp" />
+    <ClCompile Include="nextbignum.cpp" />
     <ClCompile Include="notforend.cpp" />
     <ClCompile Include="nqueens.cpp" />
     <ClCompile Include="numsdes.cpp" />
