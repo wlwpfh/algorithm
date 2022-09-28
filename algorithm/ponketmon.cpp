@@ -1,24 +1,23 @@
 #include <vector>
 #include <algorithm>
+#include <map>
 using namespace std;
 
 int solution(vector<int> nums)
-{   //nums: 포켓몬 종류 번호가 담긴 배열
-    //앞의 수와 다르면 ++, 근데 answer>nums.size()/2면 반띵한 사이즈로
-    vector<int> num(nums.size() + 1);
-    int i, answer = 0;
-    sort(nums.begin(), nums.end());
+{
+    int answer = 0;
 
-    for (i = 0; i < nums.size(); i++) {
-        num[nums[i]]++;
+    map<int, int> m;
+
+    for (int i = 0; i < nums.size(); i++) {
+        m[nums[i]]++;
     }
 
-    for (i = 1; i < num.size(); i++) {
-        printf("%d ", num[i]); 
+    for (int i = 0; i < m.size(); i++) {
+        if (answer == (nums.size() + 1) / 2)
+            break;
+        answer++;
     }
 
-    if (answer > (nums.size() / 2))
-        return nums.size() / 2;
-    else
-        return answer;
+    return answer;
 }
