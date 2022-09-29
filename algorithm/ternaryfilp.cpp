@@ -5,40 +5,15 @@
 using namespace std;
 
 int solution(int n) {
-    int rest = 0, count = 0, new_count = 0;
-    long long three_num = 0, tmp, new_three = 0, answer = 0;
+    int answer = 0;
+    string tenary = "";
 
-    while (1) {
-        if (n < 3) {
-            three_num += pow(10, count) * n;
-            count++;
-            printf("3진법으로 %d \n", three_num);
-            break;
-        }
-        else {
-            rest = n % 3;
-            n = n / 3;
-            three_num += pow(10, count) * rest;
-            count++;
-            printf("3진법으로 %d \n", three_num);
-        }
-
+    while (n != 0) {
+        tenary.insert(0, to_string(n % 3));
+        n /= 3;
     }
-    printf("%d %d \n", three_num, count);
-
-    while (1) {
-        if (new_count == count) {
-            answer += three_num * 1;
-            break;
-        }
-        else {
-            tmp = three_num % 10;
-            three_num = three_num / 10;
-            new_count++;
-            answer += pow(3, count - new_count) * tmp;
-            printf("몫:%d 나머지:%d answer: %d count:%d \n", three_num, tmp, answer, new_count);
-
-        }
+    for (int i = tenary.length() - 1; i >= 0; i--) {
+        answer += pow(3, i) * (tenary[i] - '0');
     }
 
     return answer;
