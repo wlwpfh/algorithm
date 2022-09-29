@@ -1,30 +1,21 @@
-#include <iostream>
-#include <stdio.h>
-#include <string>
 #include <vector>
-
+#include <algorithm>
 using namespace std;
 
+int bud = 0;
+
 int solution(vector<int> d, int budget) {
-    int i, sum = 0, curr = 0, max = 0, answer = 0;
-    for (i = 0; i < d.size(); i++) {
-        sum += d[i];
-    }
-    if (sum >= budget)
-        return d.size();
-    else {
-        for (i = 0; i < d.size(); i++) {
-            if (curr + d[i] > budget)
-                break;
-            else if (curr + d[i] == budget) {
-                max++;
-                break;
-            }
-            else {
-                max++;
-                curr += d[i];
-            }
+    int answer = 0;
+
+    sort(d.begin(), d.end());
+
+    for (int i = 0; i < d.size(); i++) {
+        if (d[i] + bud <= budget) {
+            answer++;
+            bud += d[i];
         }
-        return max;
+
     }
+
+    return answer;
 }
