@@ -372,6 +372,7 @@
     <ClCompile Include="collatzconjecture.cpp" />
     <ClCompile Include="combination.cpp" />
     <ClCompile Include="countofdivandadd.cpp" />
+    <ClCompile Include="crane.cpp" />
     <ClCompile Include="cyclecheck.cpp" />
     <ClCompile Include="determinesqrt.cpp" />
     <ClCompile Include="developfunc.cpp" />
