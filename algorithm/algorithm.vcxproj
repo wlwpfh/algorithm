@@ -429,6 +429,7 @@
     <ClCompile Include="rightbracket.cpp" />
     <ClCompile Include="rotatebracket.cpp" />
     <ClCompile Include="simple369game.cpp" />
+    <ClCompile Include="stringsort.cpp" />
     <ClCompile Include="teamassignement.cpp" />
     <ClCompile Include="tmp.cpp" />
     <ClCompile Include="trie.cpp" />
