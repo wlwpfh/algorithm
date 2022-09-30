@@ -957,6 +957,9 @@
     <ClCompile Include="crane.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="dartgame.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
