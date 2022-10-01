@@ -1,32 +1,34 @@
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int solution(int n, vector<int> lost, vector<int> reserve) {
-    int i, j, answer = 0;
-    int checked[30] = { 0 }; //빌림을 받은 애
-    int checking[30] = { 0 }; //빌려준 애
+    int i, j, answer = 0, tmp = 0;
+
     for (i = 0; i < lost.size(); i++) {
-        printf("없는 사람은 %d \n", lost[i]);
-
         for (j = 0; j < reserve.size(); j++) {
-            printf("빌려줄 수 있는 사람은 %d \n", reserve[j]);
-
-            if (abs(lost[i] - reserve[j]) == 1 && checked[lost[i]] == 0
-                && checking[reserve[j]] == 0) {
-                checked[lost[i]] = 1;
-                checking[reserve[j]] = 1;
-                answer++;
-
-                printf("%d는 입게 되었다 \n", lost[i]);
-            }
-            else {
-                printf("누가 빌려주었거나 사이즈가 맞지 않다. \n");
+            if (lost[i] == reserve[j]) {
+                lost.erase(lost.begin() + i);
+                reserve.erase(reserve.begin() + j);
+                i -= 1;
             }
         }
-
     }
+    answer = n - lost.size();
 
-    return n - lost.size() + answer;
+    sort(lost.begin(), lost.end());
+    sort(reserve.begin(), reserve.end());
+
+    for (i = 0; i < lost.size(); i++) {
+        for (j = 0; j < reserve.size(); j++) {
+            if (abs(lost[i] - reserve[j]) == 1) {
+                reserve.erase(reserve.begin() + j);
+                answer++;
+            }
+        }
+    }
+    return answer;
 }
+//만약 lost와 reserve에 둘 다 같은 아이가 있으면 양쪽을 소거해야 함.
