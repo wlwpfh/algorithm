@@ -421,6 +421,7 @@
     <ClCompile Include="oddeven.cpp" />
     <ClCompile Include="openchatroom.cpp" />
     <ClCompile Include="overtimeindex.cpp" />
+    <ClCompile Include="pairremove.cpp" />
     <ClCompile Include="pandycount.cpp" />
     <ClCompile Include="parkingfee.cpp" />
     <ClCompile Include="permutation.cpp" />

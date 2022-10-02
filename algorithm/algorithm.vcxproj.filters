@@ -960,6 +960,9 @@
     <ClCompile Include="dartgame.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="pairremove.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
