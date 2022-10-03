@@ -400,6 +400,7 @@
     <ClCompile Include="inttoarray.cpp" />
     <ClCompile Include="jadencasestring.cpp" />
     <ClCompile Include="kthnum.cpp" />
+    <ClCompile Include="lifeboat.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="listofphonenum.cpp" />
     <ClCompile Include="lotto.cpp" />
