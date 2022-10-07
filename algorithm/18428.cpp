@@ -1,4 +1,3 @@
-#include<stdio.h>
 #include<vector>
 #include<iostream>
 using namespace std;
@@ -35,12 +34,12 @@ void makeWall(int count, int index) {
 				return;
 			}
 		}
-		printf("YES");
+		cout << "YES";
 		exit(0);
 	}
 	for (int i = index; i < e.size(); i++) {
 		map[e[i].first][e[i].second] = 'O';
-		makeWall(count + 1, index + 1);
+		makeWall(count + 1, i + 1);
 		map[e[i].first][e[i].second] = 'X';
 
 	}
@@ -48,7 +47,7 @@ void makeWall(int count, int index) {
 }
 
 int main() {
-	scanf("%d", &N);
+	cin >> N;
 
 	for (int i = 0; i < N; i++)
 		for (int j = 0; j < N; j++) {
@@ -64,7 +63,7 @@ int main() {
 	makeWall(0, 0);
 	//현재 벽을 세운 개수
 
-	printf("NO");
+	cout << "NO";
 
 	return 0;
 }
