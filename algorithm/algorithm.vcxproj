@@ -304,6 +304,7 @@
     <ClCompile Include="48.cpp" />
     <ClCompile Include="5.c" />
     <ClCompile Include="50.cpp" />
+    <ClCompile Include="5086.cpp" />
     <ClCompile Include="51.cpp" />
     <ClCompile Include="52.cpp" />
     <ClCompile Include="53.cpp" />
