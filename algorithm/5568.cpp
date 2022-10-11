@@ -1,11 +1,33 @@
 #include<stdio.h>
-#include<unordered_map>
+#include<map>
 #include<string>
+#include<vector>
 
 using namespace std;
 
-int n, k;
+int n, k, answer;
 int card[11];
+map<string, int> m;
+vector<int> v;
+bool visited[11];
+
+void backTracking(int count, string s) {
+	if (count == k) {
+		printf("현재의 s는 %s\n", s.c_str());
+		m[s]++;
+		return;
+	}
+	for (int i = 0; i < n; i++) {
+		if (!visited[i]) {
+			visited[i] = true;
+
+			backTracking(count + 1, s + to_string(card[i]));
+			visited[i] = false;
+
+		}
+	}
+
+}
 
 int main() {
 	scanf("%d", &n);
@@ -15,20 +37,9 @@ int main() {
 		scanf("%d", &card[i]);
 	}
 
-	string tmp;
+	backTracking(0, "");
 
-	unordered_map<string, int> um;
-
-	for (int i = 0; i < n; i++) {
-		for (int j = 0; j < n; j++) {
-			if (i != j) {
-				tmp = to_string(card[i]) + to_string(card[j]);
-				um[tmp]++;
-			}
-		}
-	}
-
-	printf("%d", um.size());
+	printf("%d", m.size());
 
 	return 0;
 }
