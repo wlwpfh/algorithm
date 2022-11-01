@@ -1,40 +1,24 @@
-#include <string>
 #include <vector>
-#include <unordered_map>
-#include <iostream>
+#include <string>
 #include <algorithm>
 
 using namespace std;
 
 bool solution(vector<string> phone_book) {
-    bool answer = true; int j = 0, k = 0;
-    string tmp;
-    unordered_map<string, int> dup;
-    for (string num : phone_book) {
-        dup[num.substr(0, 4)]++;
-    }
-    printf("\n");
+    bool answer = true;
 
-    for (pair <string, int> i : dup) {
-        k = 0;
-        if (i.second > 1) {
+    sort(phone_book.begin(), phone_book.end());
+
+    for (int i = 0; i < phone_book.size() - 1; i++) {
+        string now = phone_book[i];
+        string next = phone_book[i + 1];
+        if (now.length() <= 3)
+            now = now.substr(0, now.length());
+
+        if (next.substr(0, now.length()) == now) {
             answer = false;
             break;
         }
-        else {
-
-            for (string num : phone_book) {
-                if (num.substr(0, 2) == i.first && k != j) {
-                    answer = false;
-                    printf("num는 %s이고 i는 %s이다. \n", num.c_str(), i.first.c_str());
-                    break;
-                }
-
-                k++;
-            }
-
-        }
-        j++;
     }
     return answer;
 }
