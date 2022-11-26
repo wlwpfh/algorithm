@@ -407,6 +407,7 @@
     <ClCompile Include="integertriangle.cpp" />
     <ClCompile Include="inttoarray.cpp" />
     <ClCompile Include="jadencasestring.cpp" />
+    <ClCompile Include="jumpandteleportation.cpp" />
     <ClCompile Include="kthnum.cpp" />
     <ClCompile Include="lifeboat.cpp" />
     <ClCompile Include="list.cpp" />
