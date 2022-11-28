@@ -999,6 +999,9 @@
     <ClCompile Include="jumpandteleportation.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="longjump.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
