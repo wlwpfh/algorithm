@@ -371,6 +371,7 @@
     <ClCompile Include="bestalbum.cpp" />
     <ClCompile Include="bestset.cpp" />
     <ClCompile Include="bfs.cpp" />
+    <ClCompile Include="biggestnumber.cpp" />
     <ClCompile Include="bringmiddleletter.cpp" />
     <ClCompile Include="budget.cpp" />
     <ClCompile Include="cache.cpp" />
