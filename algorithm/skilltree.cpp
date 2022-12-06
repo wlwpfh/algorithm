@@ -6,31 +6,46 @@ using namespace std;
 
 map<char, int> orders;
 
-int solution(string skill, vector<string> skill_trees) {
-    int answer = 0;
-    int skill_index = 0;
-    bool flag = false;
+bool isRightOrder(string s) {
+    int index = 0;
+    for (int i = 0; i < s.length(); i++) {
+        if (s[i] - '0' != index) 
+            return false;
+        index++;
+    }
+    return true;
+}
 
+int solution(string skill, vector<string> skill_trees) {
+    vector<string> skills;
+    int answer = 0;
     for (auto a : skill)
         orders[a]++;
 
     for (string s : skill_trees) {
-        flag = true;
-        skill_index = 0;
+        string tmp = "";
         for (int i = 0; i < s.length(); i++) {
-
             if (orders[s[i]] == 0)
                 continue;
-            if (orders[s[i]] == 1 && skill[skill_index] == s[i]) {
-                skill_index++;
-            }
-            else {
-                flag = false;
-                break;
+            tmp += s[i];
+        }
+        skills.push_back(tmp);
+    }
+
+    for (int i = 0; i < skills.size(); i++) {
+        string tmp = "";
+        for (int j = 0; j < skills[i].length(); j++) {
+            for (int k = 0; k < skill.size(); k++) {
+                if (skills[i][j] == skill[k])
+                    tmp += to_string(k);
             }
         }
-        if (flag)
+        skills[i] = tmp;
+    }
+
+    for (auto a : skills) {
+        if (isRightOrder(a))
             answer++;
     }
-    return answer == 0 ? -1 : answer;
+    return answer;
 }
