@@ -403,6 +403,7 @@
     <ClCompile Include="hashad.cpp" />
     <ClCompile Include="hatesamenum.cpp" />
     <ClCompile Include="hidenums.cpp" />
+    <ClCompile Include="hindex.cpp" />
     <ClCompile Include="imitationtest.cpp" />
     <ClCompile Include="innerproduct.cpp" />
     <ClCompile Include="integertriangle.cpp" />
