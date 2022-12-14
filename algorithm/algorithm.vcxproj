@@ -418,6 +418,7 @@
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="makeavg.cpp" />
     <ClCompile Include="makeweirdword.cpp" />
+    <ClCompile Include="matrixmul.cpp" />
     <ClCompile Include="mbti.cpp" />
     <ClCompile Include="minandmax.cpp" />
     <ClCompile Include="morespicy.cpp" />
