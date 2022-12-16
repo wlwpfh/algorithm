@@ -434,6 +434,7 @@
     <ClCompile Include="numsdes.cpp" />
     <ClCompile Include="numstringeng.cpp" />
     <ClCompile Include="numsum.cpp" />
+    <ClCompile Include="n^2array.cpp" />
     <ClCompile Include="oddeven.cpp" />
     <ClCompile Include="openchatroom.cpp" />
     <ClCompile Include="overtimeindex.cpp" />

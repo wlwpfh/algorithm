@@ -1020,6 +1020,9 @@
     <ClCompile Include="choosetangerine.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="n^2array.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
