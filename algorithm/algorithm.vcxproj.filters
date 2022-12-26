@@ -1032,6 +1032,9 @@
     <ClCompile Include="12913.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="bridgetruck.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">
