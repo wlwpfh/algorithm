@@ -3,38 +3,40 @@
 
 using namespace std;
 
-int solution(int bridge_length, int weight, vector<int> truck_weights) {
-    int answer = 0;
+queue<int> waiting;
+queue<int> going;
 
-    //대기하는 트럭 큐
-    queue<int> waiting;
-    //건너는 중인 트럭 큐
-    queue<int> going;
-    // 건너는 트럭의 현재 위치...?  -> 인덱스로 접근해야 함.. 
+int solution(int bridge_length, int weight, vector<int> truck_weights) {
+    int answer = 1;
+
     vector<int> location(truck_weights.size(), 0);
 
     for (int i = 0; i < truck_weights.size(); i++)
         waiting.push(truck_weights[i]);
-    int end_bridge = 0;
-    int curr_weight = 0, start = 0, end = 0;
-    //현재 있는 그것!    // start는 다리를 건너는 트럭의 첫과 끝 index, 
-    while (end_bridge != truck_weights.size()) {
 
+    int curr_weight = 0, start = 0, end = 0;
+
+    while (1) {
+        answer++;
         if (!waiting.empty() && curr_weight + waiting.front() <= weight) {
-            curr_weight += waiting.front();
-            going.push(waiting.front());//건너는거에 추가하기;
+            int in = waiting.front();
+            curr_weight += in;
             waiting.pop();
+            going.push(in);
             end++;
         }
 
-        for (int i = start; i <= end; i++)
-            location[i]++; //이동중 
-        if (location[start] == bridge_length + 1) {
-            start++;
+        for (int i = start; i < end; i++)
+            location[i]++;
+
+        if (location[start] == bridge_length && !going.empty()) {
+            curr_weight -= going.front();
             going.pop();
-            end_bridge++;
+            start++;
         }
-        answer++;
+
+        if (waiting.empty() && going.empty())
+            break;
     }
 
     return answer;
