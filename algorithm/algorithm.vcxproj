@@ -455,6 +455,7 @@
     <ClCompile Include="simple369game.cpp" />
     <ClCompile Include="skilltree.cpp" />
     <ClCompile Include="sleepy.cpp" />
+    <ClCompile Include="stockprice.cpp" />
     <ClCompile Include="stringsort.cpp" />
     <ClCompile Include="teamassignement.cpp" />
     <ClCompile Include="tmp.cpp" />
