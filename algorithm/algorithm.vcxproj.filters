@@ -1044,6 +1044,9 @@
     <ClCompile Include="discountevent.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="collectdictionary.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">

@@ -382,6 +382,7 @@
     <ClCompile Include="carpet.cpp" />
     <ClCompile Include="choosetangerine.cpp" />
     <ClCompile Include="collatzconjecture.cpp" />
+    <ClCompile Include="collectdictionary.cpp" />
     <ClCompile Include="combination.cpp" />
     <ClCompile Include="countofdivandadd.cpp" />
     <ClCompile Include="crane.cpp" />
