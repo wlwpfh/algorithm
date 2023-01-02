@@ -334,6 +334,7 @@
     <ClCompile Include="66_2.cpp" />
     <ClCompile Include="67.cpp" />
     <ClCompile Include="68.cpp" />
+    <ClCompile Include="68936.cpp" />
     <ClCompile Include="69.cpp" />
     <ClCompile Include="7.c" />
     <ClCompile Include="70.cpp" />
