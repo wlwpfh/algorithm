@@ -278,6 +278,7 @@
     <ClCompile Include="29.c" />
     <ClCompile Include="2904.cpp" />
     <ClCompile Include="2960.cpp" />
+    <ClCompile Include="2xn.cpp" />
     <ClCompile Include="3.c" />
     <ClCompile Include="3067.cpp" />
     <ClCompile Include="31.c" />
