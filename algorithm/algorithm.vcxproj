@@ -389,6 +389,7 @@
     <ClCompile Include="combination.cpp" />
     <ClCompile Include="countofdivandadd.cpp" />
     <ClCompile Include="crane.cpp" />
+    <ClCompile Include="cutrollcake.cpp" />
     <ClCompile Include="cyclecheck.cpp" />
     <ClCompile Include="dartgame.cpp" />
     <ClCompile Include="delivery.cpp" />
