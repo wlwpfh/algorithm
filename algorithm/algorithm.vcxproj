@@ -442,6 +442,7 @@
     <ClCompile Include="nnumlcm.cpp" />
     <ClCompile Include="notforend.cpp" />
     <ClCompile Include="nqueens.cpp" />
+    <ClCompile Include="numbergame.cpp" />
     <ClCompile Include="numsdes.cpp" />
     <ClCompile Include="numstringeng.cpp" />
     <ClCompile Include="numsum.cpp" />
