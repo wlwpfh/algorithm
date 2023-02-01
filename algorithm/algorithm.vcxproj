@@ -404,6 +404,7 @@
     <ClCompile Include="expressionnumber.cpp" />
     <ClCompile Include="failrate.cpp" />
     <ClCompile Include="fake.cpp" />
+    <ClCompile Include="farthestnode.cpp" />
     <ClCompile Include="fibonacci.cpp" />
     <ClCompile Include="findmin.cpp" />
     <ClCompile Include="findprime.cpp" />
