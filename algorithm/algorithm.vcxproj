@@ -428,6 +428,7 @@
     <ClCompile Include="lifeboat.cpp" />
     <ClCompile Include="list.cpp" />
     <ClCompile Include="listofphonenum.cpp" />
+    <ClCompile Include="longestpalindrome.cpp" />
     <ClCompile Include="longjump.cpp" />
     <ClCompile Include="lotto.cpp" />
     <ClCompile Include="makeavg.cpp" />
