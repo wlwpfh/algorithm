@@ -366,6 +366,7 @@
     <ClCompile Include="9.c" />
     <ClCompile Include="9012.cpp" />
     <ClCompile Include="92334.cpp" />
+    <ClCompile Include="92335.cpp" />
     <ClCompile Include="9372.cpp" />
     <ClCompile Include="9625.cpp" />
     <ClCompile Include="9663.cpp" />
