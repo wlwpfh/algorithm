@@ -407,6 +407,7 @@
     <ClCompile Include="fake.cpp" />
     <ClCompile Include="farthestnode.cpp" />
     <ClCompile Include="fibonacci.cpp" />
+    <ClCompile Include="filenamesort.cpp" />
     <ClCompile Include="findmin.cpp" />
     <ClCompile Include="findprime.cpp" />
     <ClCompile Include="dividearray.cpp" />
