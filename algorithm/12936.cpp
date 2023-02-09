@@ -5,33 +5,43 @@ using namespace std;
 
 bool visited[20];
 
-vector<int> answer(20);
-vector<int> tmp(20);
+vector<int> answer;
+vector<int> tmp;
+long long index; //k
+int number; //n 
+long long counts;
 
-void getLine(int number, int count, long long k, int n, long long counts) {
-    if (count == n) {
-        visited[tmp[n - 1]] = false;
-        for (int i = 0; i < count; i++)
-            printf("%d ", tmp[i]);
-        if (k == counts)
+void getLine(int numbers, int num) {
+    //n개가 다 찬 경우
+     //printf("현재 counts:%d \n",counts);
+    if (numbers == number) {
+        counts++;
+        //다 넣기
+        if (counts == index)
             answer = tmp;
-
+        if (answer.size() != 0)
+            return;
         return;
     }
-    for (int i = number; i <= n; i++) {
+    //아직인 경우
+    for (int i = 1; i <= number; i++) {
         if (!visited[i]) {
             visited[i] = true;
-            tmp[count] = i;
-            getLine(i + 1, count + 1, k, n, counts + 1);
+            tmp.push_back(i);
+            getLine(numbers + 1, num + 1);
+            tmp.pop_back();
             visited[i] = false;
         }
     }
 }
 
 vector<int> solution(int n, long long k) {
-    vector<int> answer;
+    index = k;
+    number = n;
 
-    getLine(1, 0, k, n, 0);
+    findStart(n, k);
+
+    getLine(0, 1);
 
     return answer;
 }
