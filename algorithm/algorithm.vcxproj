@@ -396,6 +396,7 @@
     <ClCompile Include="cyclecheck.cpp" />
     <ClCompile Include="dartgame.cpp" />
     <ClCompile Include="delivery.cpp" />
+    <ClCompile Include="deliverybox.cpp" />
     <ClCompile Include="determinesqrt.cpp" />
     <ClCompile Include="developfunc.cpp" />
     <ClCompile Include="dfs_cc.cpp" />
