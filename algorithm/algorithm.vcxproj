@@ -476,6 +476,7 @@
     <ClCompile Include="stringsort.cpp" />
     <ClCompile Include="teamassignement.cpp" />
     <ClCompile Include="tmp.cpp" />
+    <ClCompile Include="travelway.cpp" />
     <ClCompile Include="trie.cpp" />
     <ClCompile Include="tuple.cpp" />
     <ClCompile Include="visitlength.cpp" />
