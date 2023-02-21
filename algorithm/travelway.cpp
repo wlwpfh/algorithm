@@ -1,40 +1,54 @@
 #include <string>
 #include <vector>
 #include <map>
-#include <queue>
+#include <algorithm>
 
 using namespace std;
 
+int index;
 map<string, vector<string>> m;
-map<pair<string, string>, bool> visited;
-priority_queue<string, vector<string>, greater<string>> q;
+map<pair<string, string>, int> visited;
 vector<string> answer;
+vector<string> tmp;
 
 bool compare(string a, string b) {
     return a < b;
 }
 
-void BFS(string start) {
-    q.push(start);
-    while (!q.empty()) { //다른 항공편 있는지 확인하기 
-        string city = q.top();
-        answer.push_back(city);
-   
-        q.pop();
-        for (int i = 0; i < m[city].size(); i++) {
-            if (!visited[make_pair(city, m[city][i])]) {
-                q.push(m[city][i]);
+void DFS(string city, int counts) { 
 
-                visited[make_pair(city, m[city][i])] = true;
-            }
+    if (counts == index) {
+        if (tmp[0] == "ICN" && answer.empty()) {
+            answer = tmp;
+        }
+        return;
+    }
+
+    for (int i = 0; i < m[city].size(); i++) {
+        if (visited[make_pair(city, m[city][i])] > 0) {
+            tmp.push_back(m[city][i]);
+            visited[make_pair(city, m[city][i])]--;
+            DFS(m[city][i], counts + 1);
+            tmp.pop_back();
+            visited[make_pair(city, m[city][i])]++;
         }
     }
 }
 
 vector<string> solution(vector<vector<string>> tickets) {
-    for (int i = 0; i < tickets.size(); i++)
-        m[tickets[i][0]].push_back(tickets[i][1]);
 
-    BFS("ICN");
+    for (int i = 0; i < tickets.size(); i++) {
+        m[tickets[i][0]].push_back(tickets[i][1]);
+        visited[make_pair(tickets[i][0], tickets[i][1])]++;
+    }
+    index = tickets.size() + 1;
+
+    for (pair<string, vector<string>> p : m) {
+        sort(m[p.first].begin(), m[p.first].end(), compare);
+    }
+
+    tmp.push_back("ICN");
+    DFS("ICN", 1);
+
     return answer;
 }
