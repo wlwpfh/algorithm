@@ -393,6 +393,7 @@
     <ClCompile Include="collatzconjecture.cpp" />
     <ClCompile Include="collectdictionary.cpp" />
     <ClCompile Include="combination.cpp" />
+    <ClCompile Include="compression.cpp" />
     <ClCompile Include="countofdivandadd.cpp" />
     <ClCompile Include="crane.cpp" />
     <ClCompile Include="cutrollcake.cpp" />
