@@ -1110,6 +1110,9 @@
     <ClCompile Include="compression.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="installbasestation.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="49_.cpp">

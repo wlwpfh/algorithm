@@ -429,6 +429,7 @@
     <ClCompile Include="hindex.cpp" />
     <ClCompile Include="imitationtest.cpp" />
     <ClCompile Include="innerproduct.cpp" />
+    <ClCompile Include="installbasestation.cpp" />
     <ClCompile Include="integertriangle.cpp" />
     <ClCompile Include="inttoarray.cpp" />
     <ClCompile Include="jadencasestring.cpp" />
