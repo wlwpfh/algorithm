@@ -280,6 +280,7 @@
     <ClCompile Include="2696.cpp" />
     <ClCompile Include="27.cpp" />
     <ClCompile Include="2748.cpp" />
+    <ClCompile Include="27866.cpp" />
     <ClCompile Include="28.cpp" />
     <ClCompile Include="2805_bj.cpp" />
     <ClCompile Include="2839.cpp" />
